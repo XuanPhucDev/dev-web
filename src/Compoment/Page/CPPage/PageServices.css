@@ -1,0 +1,8 @@
+.page-services .space-compoment .thumb-services{
+    background-color: #DFD5F4;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+.page-services .space-compoment .row .col-lg-3{
+    margin: 20px 0;
+}

@@ -1,0 +1,11 @@
+.body-page {
+  margin-left: 200px;
+  background-image: url("../../../Asset/Images/Homepage/header-bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .body-page {
+    margin: 100px 20px 0 20px;
+  }
+}

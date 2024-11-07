@@ -1,0 +1,25 @@
+.heading-page{
+    height: 40vh;
+    background-image: url(../../../Asset/Images/Banner/banner-page.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.heading-page {
+    justify-content: center;
+    align-items: center;
+}
+.heading-page .title{
+    text-align: center;
+}
+.heading-page .title h2{
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--primary-color);
+
+}
+.heading-page .title h3{
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+}

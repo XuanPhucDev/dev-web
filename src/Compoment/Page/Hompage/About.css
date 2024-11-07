@@ -1,0 +1,108 @@
+.about-marketing .person-1, .about-marketing .person-2 {
+  position: relative;
+}
+
+.about-marketing .person-1 .image-person,.about-marketing .person-2 .image-person {
+  border-radius: 230px;
+  z-index: 10;
+  position: relative;
+}
+.about-marketing .person-1 .icon-person {
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: -10%;
+  z-index: 1;
+}
+.about-marketing .person-2 .icon-person {
+  position: absolute;
+  width: 35%;
+  top: 0;
+  right: -10%;
+  z-index: 1;
+}
+.about-marketing .person-2 .image-person{
+  height: 500px;
+  object-fit: cover;
+}
+.about-marketing .text-about-us img{
+  width: 20%;
+  animation: rotate-reverse 4s linear infinite;
+  margin-bottom: 20px ;
+}
+.about-marketing .text-about-us button{
+  margin-top: 20px;
+}
+.about-marketing .text-about-us button i{
+  transform: rotate(-45deg);
+  transition: .5s ease-in-out;
+  padding: 10px;
+  background-color: white;
+  color: #4E2FDA;
+  border-radius: 100%;
+}
+.about-marketing .text-about-us button:hover i{
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+}
+.about-marketing .list-about {
+  margin: 20px 0;
+}
+.about-marketing .list-about .col-lg-4 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.about-marketing .content-banner .features .thumb-features {
+  width: calc(25% - 20px);
+}
+.about-marketing .content-banner .features .thumb-features p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+.list-about {
+  text-align: center;
+}
+.list-about img {
+  width: 50%;
+}
+.list-about p {
+  margin: 10px 0;
+  color: var(--tertiary-color);
+  font-weight: 600;
+}
+.know-about-marketing .heading-know-about-marketing {
+  width: auto;
+}
+.know-about-marketing .content-know-about-marketing {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 75vh;
+  background-image: url("../../../../Asset/Images/Product-Marketing/background-banner-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.know-about-marketing .content-know-about-marketing .col-lg-8 {
+  padding: 0 50px;
+  color: white;
+}
+.know-about-marketing .content-know-about-marketing .overlay {
+  top: 0;
+  left: 0;
+}
+.know-about-marketing .content-know-about-marketing .content-banner {
+  position: relative;
+  z-index: 99;
+}
+.about-marketing button{
+  transition: all 1s ease-in-out;
+}
+.about-marketing button:hover{
+  margin-top: 0;
+  transition: .5s ease-in-out;
+
+}

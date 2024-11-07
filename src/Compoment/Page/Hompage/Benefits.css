@@ -1,0 +1,50 @@
+.Benefits .tagline h3 {
+  text-align: center;
+  margin: 40px auto;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+}
+.Benefits .content .col {
+  transition: all 0.3s ease;
+}
+.Benefits .content .col .content-case p {
+  display: none;
+}
+.Benefits .content .col.active {
+  flex: 3 0;
+}
+.Benefits .content .col.active .content-case p {
+  display: block;
+}
+.Benefits .content .col h4 {
+  transition: all 0.3s ease;
+
+  transform: rotate(-90deg);
+}
+.Benefits .content .col.active h4 {
+  transform: rotate(0);
+  transition: all 0.3s ease;
+}
+.case-study {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  align-items: end;
+  justify-content: start;
+  text-align: left;
+  background-position: center;
+}
+.case-study .overlay {
+  z-index: 1;
+}
+.case-study .content-case {
+  margin: 50px 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+}

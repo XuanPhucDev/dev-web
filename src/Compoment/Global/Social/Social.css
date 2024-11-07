@@ -1,0 +1,38 @@
+.social ul{
+    margin: 0;
+    padding: 0;
+}
+.social ul li{
+    margin: 10px auto;
+    padding: 0;
+    display: inline-block;
+}
+.social ul li a {
+    color: #333;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    height: auto;
+    font-size: 24px;
+    margin-right:15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social ul li a:hover i{
+    transform: scale(1.2); /* Tăng kích thước khi hover */
+    color: var(--logo-primary-color);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--logo-primary-color);
+
+}
+.social ul li a i{
+    font-size: 24px;
+    border-radius: 100%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--background-button-color);
+}

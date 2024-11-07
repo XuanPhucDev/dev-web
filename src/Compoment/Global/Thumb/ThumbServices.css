@@ -1,0 +1,18 @@
+.thumb-services img {
+  width: 50%;
+}
+.thumb-services h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+.thumb-services p {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: justify;
+}
+.col-lg-3 .thumb-services {
+  height: 100%;
+  border-radius: 10px;
+  padding: 0 20px;
+}

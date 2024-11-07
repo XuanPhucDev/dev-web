@@ -1,0 +1,29 @@
+.why-choose-us ul li {
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  border :1px solid var(--primary-color);
+  padding: 20px 35px;
+  border-radius: 15px;
+
+}
+.why-choose-us ul li i {
+  width: calc(10% - 20px);
+  font-size: 48px;
+  color: var(--primary-color);
+}
+.why-choose-us ul li .text-why-choose-us {
+  width: calc(90% - 20px);
+}
+.why-choose-us ul li .text-why-choose-us h4 {
+  color: var(--logo-primary-color);
+  font-size: 20px;
+  font-weight: 700;
+}
+.why-choose-us ul li .text-why-choose-us p {
+    margin-bottom: 0;
+  color: var(--title-color);
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+}

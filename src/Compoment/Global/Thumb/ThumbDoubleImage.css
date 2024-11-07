@@ -1,0 +1,31 @@
+.thumb-why-choose-us {
+  position: relative;
+}
+.thumb-why-choose-us .user {
+  justify-content: space-between;
+  align-items: start;
+}
+.thumb-why-choose-us .user img {
+  border-radius: 230px 230px 230px 230px;
+  width: calc(45% - 20px);
+  z-index: 9;
+  display: block;
+}
+.thumb-why-choose-us .user #user2 {
+  margin-top: 80px;
+}
+.thumb-why-choose-us .icon img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.thumb-why-choose-us .icon #icon1 {
+  bottom: 0;
+  left: 45%;
+  z-index: 1;
+}
+.thumb-why-choose-us .icon #icon2 {
+  top: 0;
+  left: 45%;
+  z-index: 1;
+}

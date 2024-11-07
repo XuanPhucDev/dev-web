@@ -1,0 +1,39 @@
+.popular .heading-popular {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+.heading-popular h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+}
+.popular .services {
+  margin: 20px 0;
+}
+
+.popular .services .col-lg-3:first-child .thumb-services {
+  background-color: #febfda;
+}
+.popular .services .col-lg-3:nth-child(2) .thumb-services {
+  background-color: #cac6fd;
+}
+.popular .services .col-lg-3:nth-child(3) .thumb-services {
+  background-color: #ffe8a4;
+}
+.popular .services .col-lg-3:last-child .thumb-services {
+  background-color: #d4ffd6;
+}
+
+.popular .view-more {
+  display: flex;
+  justify-content: center;
+}
+.popular .view-more button {
+  transition: all 1s ease-in-out;
+}
+.popular .view-more button:hover {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-in-out;
+}

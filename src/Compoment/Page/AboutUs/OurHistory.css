@@ -1,0 +1,37 @@
+.our-history .col-lg-6 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.our-history .thumb-why-choose-us .user img {
+  height: 440px;
+  width: calc(50% - 20px);
+}
+.our-history .thumb-why-choose-us .icon #icon2 {
+  left: 55%;
+  top: 10%;
+}
+.our-history .thumb-why-choose-us .icon img {
+  width: 50px;
+  height: 50px;
+}
+.our-history .slide-history {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  border-bottom: 2px dotted var(--primary-color);
+}
+.our-history .slide-history span {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+}
+.our-history .slide-history h4 {
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: 700;
+}
+.our-history .slide-history p {
+  font-size: 16px;
+  font-weight: 400;
+}
