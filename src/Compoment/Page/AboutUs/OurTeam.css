@@ -1,0 +1,52 @@
+.our-team .thumb-our-team {
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+.our-team .thumb-our-team:hover .team-social {
+  display: block;
+}
+.our-team .thumb-our-team:hover img {
+  transform: scale(1.1) rotate(-4deg);
+  transition: all 0.4s ease-in-out;
+}
+.our-team .thumb-our-team .images-thumb-our-team{
+    overflow: hidden;
+}
+.our-team .thumb-our-team img{
+    border-radius: 5px;
+}
+.our-team .thumb-our-team .content {
+  text-align: center;
+  margin: 10px auto;
+}
+.our-team .thumb-our-team .content h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.our-team .thumb-our-team .content p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--title-color);
+  font-style: italic;
+}
+.our-team .thumb-our-team .team-social {
+  display: none;
+  transition: all 1s ease-in-out;
+}
+.our-team .thumb-our-team .team-social ul {
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  border-radius: 15px;
+  background-color: var(--primary-color);
+}
+.our-team .thumb-our-team .team-social ul li a i {
+  font-size: 24px;
+  padding: 0 20px;
+  color: white;
+}

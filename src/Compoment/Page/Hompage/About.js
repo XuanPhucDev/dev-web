@@ -1,11 +1,11 @@
 import React from "react";
 import "./About.css";
 import { Col, Container, Row } from "react-bootstrap";
-import person1 from "../../../../Asset/Images/Homepage/person1.jpg";
-import iconPerson1 from "../../../../Asset/Images/Homepage/icon-person1.png";
-import person2 from "../../../../Asset/Images/Homepage/person2.jpg";
-import iconPerson2 from "../../../../Asset/Images/Homepage/icon-person2.png";
-import iconText from "../../../../Asset/Images/Homepage/icon-text.png";
+import person1 from "../../../Asset/Images/Homepage/person1.jpg";
+import iconPerson1 from "../../../Asset/Images/Homepage/icon-person1.png";
+import person2 from "../../../Asset/Images/Homepage/person2.jpg";
+import iconPerson2 from "../../../Asset/Images/Homepage/icon-person2.png";
+import iconText from "../../../Asset/Images/Homepage/icon-text.png";
 import Title from "../../Global/Title/Title";
 import { Link } from "react-router-dom";
 const About = () => {

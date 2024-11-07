@@ -1,13 +1,14 @@
 import React from "react";
 import "./AboutUs.css";
 import HeadingPage from "../../Global/Title/HeadingPage";
-import About from "../Marketing/CategoryMar/About";
-import Partner from "../Marketing/CategoryMar/Partner";
 import WhyChooseUs from "../AboutUs/WhyChooseUs";
-import Vision from "../Marketing/CategoryMar/Vision";
 import OurHistory from "../AboutUs/OurHistory";
-import FeedbackCustomer from "../Marketing/CategoryMar/Feedback";
 import OurSkill from "../AboutUs/OurSkill";
+import About from "../Hompage/About";
+import Partner from "../Hompage/Partner";
+import Vision from "../Hompage/Vision";
+import FeedbackCustomer from "../Hompage/Feedback";
+import OurTeam from "../AboutUs/OurTeam";
 const AboutUs = () => {
   return (
     <div className="page-about-us">
@@ -18,6 +19,7 @@ const AboutUs = () => {
       <Vision></Vision>
       <OurHistory></OurHistory>
       <OurSkill></OurSkill>
+      <OurTeam></OurTeam>
       <FeedbackCustomer></FeedbackCustomer>
     </div>
   );

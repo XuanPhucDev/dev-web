@@ -1,16 +1,16 @@
 import React from "react";
-import anniBanner1 from "../../../../Asset/Images/ani-banner-1.png";
+import anniBanner1 from "../../../Asset/Images/ani-banner-1.png";
 import "./Banner.css";
 import useAxios from "../../../Context/API/UseAxios";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import personBanner from "../../../../Asset/Images/Homepage/image-banner/header-img1.png";
-import bgPersonBanner from "../../../../Asset/Images/Homepage/image-banner/header-imgbg-1.png";
-import Sudan from "../../../../Asset/Images/Homepage/image-banner/header-author-img2.png";
-import dataImages from "../../../../Asset/Images/Homepage/image-banner/header-author-img1.png";
-import elements2 from "../../../../Asset/Images/Homepage/image-banner/elements2.png";
-import elements3 from "../../../../Asset/Images/Homepage/image-banner/elements3.png";
-import loudspeaker from "../../../../Asset/Images/Homepage/image-banner/sound-icons1.svg";
-import lite from "../../../../Asset/Images/Homepage/image-banner/lite-icons1.svg";
+import personBanner from "../../../Asset/Images/Homepage/image-banner/header-img1.png";
+import bgPersonBanner from "../../../Asset/Images/Homepage/image-banner/header-imgbg-1.png";
+import Sudan from "../../../Asset/Images/Homepage/image-banner/header-author-img2.png";
+import dataImages from "../../../Asset/Images/Homepage/image-banner/header-author-img1.png";
+import elements2 from "../../../Asset/Images/Homepage/image-banner/elements2.png";
+import elements3 from "../../../Asset/Images/Homepage/image-banner/elements3.png";
+import loudspeaker from "../../../Asset/Images/Homepage/image-banner/sound-icons1.svg";
+import lite from "../../../Asset/Images/Homepage/image-banner/lite-icons1.svg";
 import { Link } from "react-router-dom";
 
 const Banner = () => {

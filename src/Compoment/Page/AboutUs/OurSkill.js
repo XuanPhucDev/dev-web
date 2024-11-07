@@ -2,6 +2,7 @@ import Title from "../../Global/Title/Title";
 import { Col, Container, Row } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import bsG from "../../../Asset/Images/About-Us/BsG.png";
 import "./OurSkill.css";
 const OurSkill = () => {
   const { ref, inView } = useInView({
@@ -53,32 +54,38 @@ const OurSkill = () => {
     return () => Object.values(intervals).forEach(clearInterval);
   }, [inView]);
   return (
-    <div className="out-skill space-compoment">
+    <div className="our-skill space-compoment flex flex-column">
       <Container>
         <Row>
           <Title des="Skill" title="Our Skill"></Title>
         </Row>
         <Row>
+          <div className="icon-our-skill-1">
+            <img src={bsG} alt="" />
+          </div>
           <Col>
             <div ref={ref} className="flex flex-row">
               <div className="content">
-                <h4>{counts.smm}</h4>
+                <h4>{counts.smm} %</h4>
                 <p>SMM</p>
               </div>
               <div className="content">
-                <h4>{counts.ppc}</h4>
+                <h4>{counts.ppc} %</h4>
                 <p>PPC</p>
               </div>
               <div className="content">
-                <h4>{counts.seo}</h4>
+                <h4>{counts.seo} %</h4>
                 <p>SEO</p>
               </div>
               <div className="content">
-                <h4>{counts.digitalMarketing}</h4>
+                <h4>{counts.digitalMarketing} %</h4>
                 <p>Digital Marketing</p>
               </div>
             </div>
           </Col>
+          <div className="icon-our-skill-2">
+            <img src={bsG} alt="" />
+          </div>
         </Row>
       </Container>
     </div>

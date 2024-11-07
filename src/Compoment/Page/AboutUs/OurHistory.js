@@ -13,8 +13,8 @@ const OurHistory = () => {
       <Container>
         <Row>
           <Title
-            des="Our History"
-            title="Our Journey: Charting the Evolution of SEOC"
+            des="Lịch sử hình thành D.A.C"
+            title="Hành trình của chúng tôi"
           ></Title>
         </Row>
         <Row>
