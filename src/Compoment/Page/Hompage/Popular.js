@@ -28,7 +28,7 @@ const Popular = () => {
         <Row>
           <div className="view-more">
             <button>
-              Xem Thêm <i class="fa-solid fa-arrow-right"></i>
+              Xem Thêm <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </Row>

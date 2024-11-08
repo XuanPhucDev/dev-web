@@ -17,7 +17,7 @@ const GetInTouch = () => {
               </p>
               <div className="view-more">
                 <Link to={`/contact`}>
-                  Liên hệ ngay với D.A.C <i class="fa-solid fa-arrow-right"></i>
+                  Liên hệ ngay với D.A.C <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>
             </div>

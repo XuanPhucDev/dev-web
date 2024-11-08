@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
             </p>
             <ul>
               <li className="flex flex-row">
-                <i class="fa-solid fa-clipboard-check"></i>
+                <i className="fa-solid fa-clipboard-check"></i>
                 <div className="text-why-choose-us">
                   <h4>Proven Result</h4>
                   <p>
@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
                 </div>
               </li>
               <li className="flex flex-row">
-                <i class="fa-solid fa-clipboard-check"></i>
+                <i className="fa-solid fa-clipboard-check"></i>
                 <div className="text-why-choose-us">
                   <h4>Customized Solutions</h4>
                   <p>
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
                 </div>
               </li>
               <li className="flex flex-row">
-                <i class="fa-solid fa-clipboard-check"></i>
+                <i className="fa-solid fa-clipboard-check"></i>
                 <div className="text-why-choose-us">
                   <h4>Dedicated Support</h4>
                   <p>

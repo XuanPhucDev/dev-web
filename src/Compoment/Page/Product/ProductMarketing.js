@@ -25,23 +25,23 @@ const ProductMarketing = (props) => {
                         By <span>{item.user}</span>
                       </p>
                       <p>
-                        <i class="fa-solid fa-cart-shopping"></i> {item.count}{" "}
+                        <i className="fa-solid fa-cart-shopping"></i> {item.count}{" "}
                         sales
                       </p>
                       <p id={item.update ? "active" : "normal"}>
                         Recently Updated{" "}
                         {item.update ? (
-                          <i class="fa-solid fa-circle-check"></i>
+                          <i className="fa-solid fa-circle-check"></i>
                         ) : (
-                          <i class="fa-solid fa-circle-xmark"></i>
+                          <i className="fa-solid fa-circle-xmark"></i>
                         )}{" "}
                       </p>
                       <p id={item.update ? "active" : "normal"}>
                         Well Documented{" "}
                         {item.update ? (
-                          <i class="fa-solid fa-circle-check"></i>
+                          <i className="fa-solid fa-circle-check"></i>
                         ) : (
-                          <i class="fa-solid fa-circle-xmark"></i>
+                          <i className="fa-solid fa-circle-xmark"></i>
                         )}{" "}
                       </p>
                     </div>

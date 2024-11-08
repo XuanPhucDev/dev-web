@@ -27,31 +27,31 @@ const Footer = () => {
                 <li>
                   <a href="#" className="flex flex-row">
                     <span>Case Studies</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex flex-row">
                     <span>Pricing Plans</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex flex-row">
                     <span>Testimonials</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex flex-row">
                     <span>Contact Us</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex flex-row">
                     <span>Faq</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
               </ul>
@@ -62,7 +62,7 @@ const Footer = () => {
               <h4>Get in touch</h4>
               <ul>
                 <li>
-                  <i class="fa-solid fa-paper-plane"></i>
+                  <i className="fa-solid fa-paper-plane"></i>
 
                   <a href="#">
                     Đường số 23, Phường 11, Quận 6, Thành phố Hồ Chí Minh, Việt
@@ -70,11 +70,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <i class="fa-solid fa-paper-plane"></i>
+                  <i className="fa-solid fa-paper-plane"></i>
                   <a href="tel:0983731545">0983.731.545</a>
                 </li>
                 <li>
-                  <i class="fa-solid fa-paper-plane"></i>
+                  <i className="fa-solid fa-paper-plane"></i>
                   <a href="mailto:xuanphucdev1907@gmail.com">
                     xuanphucdev1907@gmail.com
                   </a>
@@ -88,22 +88,22 @@ const Footer = () => {
               <ul>
                 <li>
                   <a href="#">
-                    <i class="fa-solid fa-user"></i>Tài khoản
+                    <i className="fa-solid fa-user"></i>Tài khoản
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa-solid fa-user"></i>Đơn hàng
+                    <i className="fa-solid fa-user"></i>Đơn hàng
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa-solid fa-user"></i>Hướng dẫn thanh toán
+                    <i className="fa-solid fa-user"></i>Hướng dẫn thanh toán
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa-solid fa-user"></i>Chính sách thanh toán
+                    <i className="fa-solid fa-user"></i>Chính sách thanh toán
                   </a>
                 </li>
               </ul>

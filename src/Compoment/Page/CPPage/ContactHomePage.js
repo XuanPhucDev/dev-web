@@ -26,7 +26,7 @@ const ContactHomePage = () => {
                   <li>
                     <Link to="">
                       <div className="flex flex-row">
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i className="fa-solid fa-paper-plane"></i>
                         <div className="text">
                           <h4>Địa chỉ</h4>
                           <p>
@@ -40,7 +40,7 @@ const ContactHomePage = () => {
                   <li>
                     <Link to="tel:0983731545">
                       <div className="flex flex-row">
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i className="fa-solid fa-paper-plane"></i>
                         <div className="text">
                           <h4>Gọi ngay cho D.A.C</h4>
                           <p>0983-731-545</p>
@@ -51,7 +51,7 @@ const ContactHomePage = () => {
                   <li>
                     <Link to="mailto:xuanphucdev1907@gmail.com">
                       <div className="flex flex-row">
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i className="fa-solid fa-paper-plane"></i>
                         <div className="text">
                           <h4>Gửi mail cho D.A.C</h4>
                           <p>xuanphucdev1907@gmail.com</p>
@@ -64,11 +64,11 @@ const ContactHomePage = () => {
             </div>
           </Col>
           <Col lg={7}>
-            <div class="contact-form">
+            <div className="contact-form">
               <h3>Để lại thông tin tại đây</h3>
               <form action="/submit-form" method="POST">
                 <div className="form-name flex flex-row">
-                  <div class="form-group input-name">
+                  <div className="form-group input-name">
                     <label for="firstname">Họ</label>
                     <input
                       type="text"
@@ -78,17 +78,17 @@ const ContactHomePage = () => {
                       required
                     />
                   </div>
-                  <div class="form-group input-name">
+                  <div className="form-group input-name">
                     <label for="lastname">Tên</label>
                     <input type="text" id="lastname" name="lastname" placeholder="Tên của quý khách" required />
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label for="email">Email</label>
                   <input type="email" id="email" name="email"placeholder="Gmail của quý khách" required />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="phone">Số điện thoại</label>
                   <input
                     type="tel"
@@ -99,7 +99,7 @@ const ContactHomePage = () => {
                     required
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="city">City</label>
                   <select id="city" name="city" required>
                     <option value="">Select your city</option>
@@ -110,7 +110,7 @@ const ContactHomePage = () => {
                     <option value="Miami">Miami</option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="message">Thông tin thêm</label>
                   <textarea
                     id="message"

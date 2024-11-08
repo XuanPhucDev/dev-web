@@ -29,7 +29,7 @@ const About = () => {
               ></Title>
               <div className="view-more">
                 <Link to={`/about-us`}>
-                  Xem Thêm <i class="fa-solid fa-arrow-right"></i>
+                  Xem Thêm <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>
             </div>

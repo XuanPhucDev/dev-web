@@ -16,12 +16,12 @@ const OurTeam = () => {
         <Row>
           {DataTeam.map((item) => (
             <Col lg={3}>
-              <div class="thumb-our-team">
+              <div className="thumb-our-team">
                 <div className="images-thumb-our-team">
                   <img src={item.images} alt={item.name} />
                 </div>
 
-                <div class="content">
+                <div className="content">
                   <h4>{item.name}</h4>
                   <p>{item.des}</p>
                 </div>
@@ -29,17 +29,17 @@ const OurTeam = () => {
                   <ul className="flex flex-row">
                     <li>
                       <a href={item.facebook}>
-                        <i class="fa-brands fa-facebook"></i>
+                        <i className="fa-brands fa-facebook"></i>
                       </a>
                     </li>
                     <li>
                       <a href={item.instagram}>
-                        <i class="fa-brands fa-instagram"></i>
+                        <i className="fa-brands fa-instagram"></i>
                       </a>
                     </li>
                     <li>
                       <a href={item.tiktok}>
-                        <i class="fa-brands fa-tiktok"></i>
+                        <i className="fa-brands fa-tiktok"></i>
                       </a>
                     </li>
                   </ul>

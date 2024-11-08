@@ -25,7 +25,7 @@ const Blog = () => {
                     <Card.Text>{item.content}</Card.Text>
                     <div className="view-more">
                       <Link to={`/blog/${index}`}>
-                        Đọc tiếp <i class="fa-solid fa-arrow-right"></i>
+                        Đọc tiếp <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>
                   </Card.Body>
@@ -38,7 +38,7 @@ const Blog = () => {
           <Col lg={12}>
             <div className="view-more">
               <Link to={`/blog/`}>
-                Xem thêm <i class="fa-solid fa-arrow-right"></i>
+                Xem thêm <i className="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
           </Col>

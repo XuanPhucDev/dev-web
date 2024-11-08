@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap/";
@@ -6,8 +6,15 @@ import logoCoffee from "../../../Asset/Images/logo/logo-agency.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { UseCart } from "../../../Context/Data/Cart";
 import { InputGroup, Form } from "react-bootstrap";
+import useAxios from "../../../Context/API/UseAxios";
 
 const Header = () => {
+  const [emailUser] = useState(localStorage.getItem("email"));
+  const dataAdmin = useAxios(
+    "https://6724cb3bc39fedae05b2bf65.mockapi.io/categoryProduct/category"
+  );
+  const check = dataAdmin.find((item) => item.email === emailUser);
+
   const { cart } = UseCart();
   console.log();
   const handleInputSearch = (e) => {
@@ -52,20 +59,6 @@ const Header = () => {
           </NavLink>
         </NavLink>
         <div className="flex flex-row user">
-          <Link to="/cart">
-            <span>
-              <i className="fa-solid fa-cart-shopping"></i>
-              Giỏ hàng{" "}
-              <i id="quantity">
-                {cart.reduce((sum, item) => sum + item.quantity, 0)}
-              </i>
-            </span>
-          </Link>
-          <Nav.Link to="/">
-            <span>
-              <i className="fa-solid fa-user"></i> Xuân Phúc
-            </span>
-          </Nav.Link>
           <InputGroup>
             <Form.Control
               onKeyDown={handleInputSearch}
@@ -76,6 +69,34 @@ const Header = () => {
               <i className="fa-solid fa-magnifying-glass"></i>
             </InputGroup.Text>
           </InputGroup>
+          <Link to="/cart">
+            <span>
+              <i className="fa-solid fa-cart-shopping"></i>
+              Giỏ hàng{" "}
+              <i id="quantity">
+                {cart.reduce((sum, item) => sum + item.quantity, 0)}
+              </i>
+            </span>
+          </Link>
+          {check ? (
+            <div className="menu-item menu-user">
+              <NavLink to="/user">
+                <span>
+                  Xin chào, <i className="fa-solid fa-user"></i> {check.role}
+                </span>
+              </NavLink>
+              <div className="sub-menu-services">
+                <Link to="/user">Sửa hồ sơ</Link>
+                <Link to="/logout">Đăng xuất</Link>
+              </div>
+            </div>
+          ) : (
+            <NavLink to="/login">
+              <span>
+                <i className="fa-solid fa-user"></i>Đăng nhập
+              </span>
+            </NavLink>
+          )}
         </div>
         <NavLink className="flex flex-row social">
           <Nav.Link to="/">
@@ -117,13 +138,10 @@ const Header = () => {
           <Link className="user" to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
 
-            <span className="icon-cart">
-              Giỏ hàng{" "}
-              
-            </span>
+            <span className="icon-cart">Giỏ hàng </span>
             <i id="quantity">
-                {cart.reduce((sum, item) => sum + item.quantity, 0)}
-              </i>
+              {cart.reduce((sum, item) => sum + item.quantity, 0)}
+            </i>
           </Link>
           <Link to="/">
             <i className="fa-solid fa-user"> </i>

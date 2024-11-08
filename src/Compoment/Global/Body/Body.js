@@ -14,6 +14,7 @@ import AboutUs from "../../Page/CPPage/AboutUs";
 import PageServices from "../../Page/CPPage/PageServices";
 import "./Body.css";
 import Category from "../../Page/Hompage/Category";
+import AuthPage from "../../Page/Admin/Login/AuthPage";
 
 const Body = () => {
   return (
@@ -28,6 +29,7 @@ const Body = () => {
         <Route path="/order" element={<Order />}></Route>
         <Route path="/thiet-ke-website" element={<Category />}></Route>
         <Route path="/blog" element={<PageCategoryBlog />}></Route>
+        <Route path="/login" element={<AuthPage />}></Route>
         <Route path="/services" element={<PageServices />}></Route>
         <Route
           path="/product-marketing/:slug"

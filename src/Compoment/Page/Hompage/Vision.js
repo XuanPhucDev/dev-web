@@ -32,7 +32,7 @@ const Vision = () => {
                 </p>
                 <div className="view-more">
                   <button>
-                    Xem Thêm <i class="fa-solid fa-arrow-right"></i>
+                    Xem Thêm <i className="fa-solid fa-arrow-right"></i>
                   </button>
                 </div>
               </div>
@@ -45,7 +45,7 @@ const Vision = () => {
                   <h4>Sứ mệnh </h4>
 
                   <div className="icon">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </div>
                 </div>
                 <p className="tagline">
@@ -63,7 +63,7 @@ const Vision = () => {
                   <h4>Giá trị cốt lõi </h4>
 
                   <div className="icon">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i className="fa-solid fa-arrow-right"></i>
                   </div>
                 </div>
                 <p className="tagline">
