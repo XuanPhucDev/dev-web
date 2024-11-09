@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./HomePage.css";
 import Blog from "../Blog/BlogHomePage";
-import ContactHomePage from "./ContactHomePage";
+import ContactHomePage from "../Hompage/ContactHomePage";
 import Banner from "../Hompage/Banner";
 import Partner from "../Hompage/Partner";
 import About from "../Hompage/About";

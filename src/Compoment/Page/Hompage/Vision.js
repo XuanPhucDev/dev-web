@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Vision.css";
 import Title from "../../Global/Title/Title";
+import { Link } from "react-router-dom";
 const Vision = () => {
   return (
     <div className="vision space-compoment">
@@ -31,9 +32,9 @@ const Vision = () => {
                   INSIDE doanh nghiệp của bạn
                 </p>
                 <div className="view-more">
-                  <button>
+                  <Link to="/services">
                     Xem Thêm <i className="fa-solid fa-arrow-right"></i>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

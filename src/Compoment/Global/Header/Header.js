@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap/";
@@ -13,8 +13,7 @@ const Header = () => {
   const dataAdmin = useAxios(
     "https://6724cb3bc39fedae05b2bf65.mockapi.io/categoryProduct/category"
   );
-  const check = dataAdmin.find((item) => item.email === emailUser);
-
+    const check = dataAdmin.find((item) => item.email === emailUser);
   const { cart } = UseCart();
   console.log();
   const handleInputSearch = (e) => {
@@ -45,11 +44,11 @@ const Header = () => {
             </NavLink>
             <div className="sub-menu-services">
               <Link to="/giai-phap-marketing">Marketing Trọn Gói</Link>
-              <Link to="/thiet-ke-website">Thiết kế website</Link>
+              <Link to="/pricing-plan">Pricing Plan</Link>
             </div>
           </div>
           <NavLink className="item-menu" to="/product-category">
-            Bán lẻ
+            Themes - Plugin
           </NavLink>
           <NavLink className="item-menu" to="/blog">
             Tin tức

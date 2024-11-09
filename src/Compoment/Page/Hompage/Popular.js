@@ -4,6 +4,7 @@ import dataFeatures from "../../../Context/Data/FeaturesPageMarketing";
 import "./Popular.css";
 import Title from "../../Global/Title/Title";
 import ThumbServices from "../../Global/Thumb/ThumbServices";
+import { Link } from "react-router-dom";
 const Popular = () => {
   const FeaturesTop = dataFeatures.filter((item) => item.top === true);
   return (
@@ -27,9 +28,9 @@ const Popular = () => {
 
         <Row>
           <div className="view-more">
-            <button>
+            <Link to="/services">
               Xem Thêm <i className="fa-solid fa-arrow-right"></i>
-            </button>
+            </Link>
           </div>
         </Row>
       </Container>

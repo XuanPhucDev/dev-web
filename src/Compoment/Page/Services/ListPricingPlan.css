@@ -1,0 +1,23 @@
+.list-pricing-plan .col:first-child .thumb-plan,
+.list-pricing-plan .col:nth-child(3) .thumb-plan {
+  background-color: var(--primary-color);
+  color: white;
+}
+.list-pricing-plan .col:last-child .thumb-plan,
+.list-pricing-plan .col:nth-child(2) .thumb-plan {
+  background-color: var(--background-button-color);
+}
+.list-pricing-plan .col:first-child .thumb-plan .services-plan,
+.list-pricing-plan .col:nth-child(3) .thumb-plan .services-plan {
+  background-color: #694ee0;
+}
+.list-pricing-plan .col:first-child .thumb-plan .view-more button,
+.list-pricing-plan .col:nth-child(3) .thumb-plan .view-more button {
+  background-color: white;
+  color: #4e2fda;
+}
+.list-pricing-plan .col:first-child .thumb-plan .view-more button i,
+.list-pricing-plan .col:nth-child(3) .thumb-plan .view-more button i {
+  background-color: #4e2fda;
+  color: white;
+}

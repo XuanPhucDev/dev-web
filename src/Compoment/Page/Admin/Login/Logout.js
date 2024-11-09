@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Logout = () => {
+    localStorage.removeItem("email");
     return (
-        <div>
+        <div className='log-out'>
             
         </div>
     );

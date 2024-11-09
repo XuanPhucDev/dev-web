@@ -7,7 +7,6 @@ import Product from "../../Page/Detail/Product";
 import Cart from "../../Page/CPPage/Card";
 import Order from "../../Page/Order/Order";
 import ProductMarketing from "../../Page/Product/ProductMarketing";
-import PageCategoryBlog from "../../Page/Blog/PageCategoryBlog";
 import Footer from "../Footer/Footer";
 import GetInTouch from "../Footer/GetInTouch";
 import AboutUs from "../../Page/CPPage/AboutUs";
@@ -15,6 +14,10 @@ import PageServices from "../../Page/CPPage/PageServices";
 import "./Body.css";
 import Category from "../../Page/Hompage/Category";
 import AuthPage from "../../Page/Admin/Login/AuthPage";
+import Logout from "../../Page/Admin/Login/Logout";
+import PricingPlan from "../../Page/CPPage/PricingPlan";
+import PageBlog from "../../Page/CPPage/PageBlog";
+import PageContact from "../../Page/CPPage/PageContact";
 
 const Body = () => {
   return (
@@ -28,9 +31,12 @@ const Body = () => {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
         <Route path="/thiet-ke-website" element={<Category />}></Route>
-        <Route path="/blog" element={<PageCategoryBlog />}></Route>
+        <Route path="/blog" element={<PageBlog />}></Route>
         <Route path="/login" element={<AuthPage />}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
+        <Route path="/contact" element={<PageContact />}></Route>
         <Route path="/services" element={<PageServices />}></Route>
+        <Route path="/pricing-plan" element={<PricingPlan />}></Route>
         <Route
           path="/product-marketing/:slug"
           element={<ProductMarketing />}

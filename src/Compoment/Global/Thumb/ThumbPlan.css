@@ -1,0 +1,39 @@
+.thumb-plan {
+  padding: 10px;
+  text-align: justify;
+  align-items: center;
+  justify-content: start;
+  align-content: stretch;
+  height: 100%;
+}
+.thumb-plan #detail-plan,
+.thumb-plan .services-plan {
+  border-bottom: 1px dotted var(--logo-primary-color);
+  padding-bottom: 10px;
+}
+.thumb-plan h3 {
+  color: var(--logo-primary-color);
+
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+}
+.thumb-plan h4 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.thumb-plan .services-plan {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+.thumb-plan .services-plan h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.thumb-plan .services-plan ul li {
+  margin-left: 30px;
+  list-style-type: disclosure-closed;
+}
