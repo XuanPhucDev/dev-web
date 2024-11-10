@@ -50,6 +50,8 @@
     justify-content: start;
     align-items: center;
     margin-bottom: 20px;
+    transition: all .5s ease-in-out;
+
 }
 .footer .footer-col-3 ul li i{
     font-size: 24px;
@@ -68,7 +70,15 @@
 .footer .footer-col-3 ul li:hover i{
     transform: rotate(45deg);
 }
-
+.footer .footer-col-4 ul li:hover a{
+    color: var(--primary-color);
+}
+.footer .footer-col-4 ul li:hover i{
+    transform: rotate(0);
+}
+.footer .footer-col-4 ul li:hover{
+    margin-left: 20px;
+}
 @media (max-width: 992px) {
     .footer .container{
         padding: 0;

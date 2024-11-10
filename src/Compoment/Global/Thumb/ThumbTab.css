@@ -1,0 +1,18 @@
+.thumb-tab ul{
+    justify-content: center;
+  }
+  .thumb-tab ul li{
+    margin: 10px 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .thumb-tab .nav-tabs .nav-link{
+    color: var(--primary-color);
+  }
+  .thumb-tab .nav-tabs .nav-link.active{
+    color: var(--logo-primary-color);
+  }
+
+  .thumb-tab .tab-content .row .col-6{
+    margin-bottom: 15px;
+  }

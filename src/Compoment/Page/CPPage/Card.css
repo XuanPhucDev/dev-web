@@ -1,14 +1,8 @@
 .pricecore {
   display: none;
 }
- .container {
-  border-radius: 15px;
-}
  .title {
   font-size: 16px;
-}
- .container{
-    width: 80%;
 }
  .container .table-cart {
   width: 100%;

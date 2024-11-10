@@ -1,7 +1,7 @@
 const dataTestimonials = [
   {
     name: "Sarah L.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -9,7 +9,7 @@ const dataTestimonials = [
   },
   {
     name: "David M.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -17,7 +17,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -25,7 +25,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -33,7 +33,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -41,7 +41,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -49,7 +49,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -57,7 +57,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -65,7 +65,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -73,7 +73,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -81,7 +81,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -89,7 +89,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -97,7 +97,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -105,7 +105,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -113,7 +113,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -121,7 +121,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -129,7 +129,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -137,7 +137,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:
@@ -145,7 +145,7 @@ const dataTestimonials = [
   },
   {
     name: "Emily R.",
-    star: "4",
+    star: 4,
     images:
       "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/google.svg",
     content:

@@ -1,0 +1,20 @@
+.testimonial-boxarea{
+    background: var(--background-button-color);
+    border-radius: 8px;
+    padding: 32px 24px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    transition: all 0.4s;
+    border: 1px solid var(--background-color);
+}
+.testimonial-boxarea:hover{
+    border: 1px solid var(--primary-color);
+    transition: all 0.4s;
+    transform: translateY(-5px);
+}
+.testimonial-boxarea .quito{
+    margin-bottom: 32px;
+    height: 40px;
+    width: 40px;
+}

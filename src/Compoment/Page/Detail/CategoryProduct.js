@@ -4,7 +4,9 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import CardProduct from "../../Global/CardProduct/CardProduct.js";
 import useFetch from "../../../Context/API/ApiProduct.js";
 const CategoryProduct = (props) => {
-  const ApiProduct = useFetch("https://fakestoreapi.com/products");
+  const ApiProduct = useFetch(
+    "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
+  );
   const [fileterProduct, setFilterProduct] = useState();
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedCheckbox, setSelectedCheckbox] = useState("");
@@ -45,33 +47,40 @@ const CategoryProduct = (props) => {
     // Log giá trị valueFull khi checkbox được chọn
     const valueFull = e.target.getAttribute("value");
     console.log(`Checkbox ${checkboxName} selected with valueFull:`, valueFull);
+    if (valueFull === "all") {
+      setFilterProduct(ApiProduct);
+    }
     if (valueFull === "0-99") {
       setFilterProduct(
         filterProduct
-          ? filterProduct.filter((item) => item.price <= 99)
-          : ApiProduct.filter((item) => item.price <= 99)
+          ? filterProduct.filter((item) => item.price <= 99000)
+          : ApiProduct.filter((item) => item.price <= 99000)
       );
     } else if (valueFull === "100-299") {
       setFilterProduct(
         filterProduct
           ? filterProduct.filter(
-              (item) => item.price >= 100 && item.price <= 299
+              (item) => item.price >= 100000 && item.price <= 299000
             )
-          : ApiProduct.filter((item) => item.price >= 100 && item.price <= 299)
+          : ApiProduct.filter(
+              (item) => item.price >= 100000 && item.price <= 299000
+            )
       );
     } else if (valueFull === "300-499") {
       setFilterProduct(
         filterProduct
           ? filterProduct.filter(
-              (item) => item.price >= 300 && item.price <= 499
+              (item) => item.price >= 300000 && item.price <= 499000
             )
-          : ApiProduct.filter((item) => item.price >= 300 && item.price <= 499)
+          : ApiProduct.filter(
+              (item) => item.price >= 300000 && item.price <= 499000
+            )
       );
     } else if (valueFull === "500") {
       setFilterProduct(
         filterProduct
-          ? filterProduct.filter((item) => item.price >= 500)
-          : ApiProduct.filter((item) => item.price >= 500)
+          ? filterProduct.filter((item) => item.price >= 500000)
+          : ApiProduct.filter((item) => item.price >= 500000)
       );
     }
     //Reset fiter text
@@ -98,6 +107,16 @@ const CategoryProduct = (props) => {
             <h3>Lọc theo giá</h3>
             <form action="#" className="filter-by-price">
               {/* Checkbox "Dưới 99.000 đ" */}
+              <input
+                type="checkbox"
+                value={"all"}
+                onClick={handlePrice}
+                name="all"
+                id="all"
+                checked={selectedCheckbox === "all"} // Chỉ chọn nếu nó đang được chọn
+              />
+               <label htmlFor="all">Tất cả</label>
+              {/* Checkbox "Từ 100.000 đ đến 299.000 đ" */}
               <input
                 type="checkbox"
                 value={"0-99"}
@@ -187,7 +206,7 @@ const CategoryProduct = (props) => {
               <CardProduct
                 key={item.id}
                 id={item.id}
-                image={item.image}
+                image={item.imagethumb}
                 title={item.title}
                 price={item.price}
                 description={item.description}

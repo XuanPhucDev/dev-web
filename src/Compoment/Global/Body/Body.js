@@ -18,6 +18,8 @@ import Logout from "../../Page/Admin/Login/Logout";
 import PricingPlan from "../../Page/CPPage/PricingPlan";
 import PageBlog from "../../Page/CPPage/PageBlog";
 import PageContact from "../../Page/CPPage/PageContact";
+import CaseStudies from "../../Page/CPPage/CaseStudies";
+import PageTestimonials from "../../Page/CPPage/PageTestimonials";
 
 const Body = () => {
   return (
@@ -37,6 +39,8 @@ const Body = () => {
         <Route path="/contact" element={<PageContact />}></Route>
         <Route path="/services" element={<PageServices />}></Route>
         <Route path="/pricing-plan" element={<PricingPlan />}></Route>
+        <Route path="/case-studies" element={<CaseStudies />}></Route>
+        <Route path="/testimonials" element={<PageTestimonials />}></Route>
         <Route
           path="/product-marketing/:slug"
           element={<ProductMarketing />}

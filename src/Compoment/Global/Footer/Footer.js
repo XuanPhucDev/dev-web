@@ -3,6 +3,7 @@ import "./Footer.css";
 import { Col, Container, Row } from "react-bootstrap";
 import logoCoffee from "../../../Asset/Images/logo/logo-agency.png";
 import Social from "../Social/Social";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,34 +26,28 @@ const Footer = () => {
               <h4>About Links</h4>
               <ul>
                 <li>
-                  <a href="#" className="flex flex-row">
+                  <Link to="/case-studies" className="flex flex-row">
                     <span>Case Studies</span>
                     <i className="fa-solid fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="flex flex-row">
+                  <Link to="/pricing-plan" className="flex flex-row">
                     <span>Pricing Plans</span>
                     <i className="fa-solid fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="flex flex-row">
+                  <Link to="/testimonials" className="flex flex-row">
                     <span>Testimonials</span>
                     <i className="fa-solid fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="flex flex-row">
+                  <Link to="/contact" className="flex flex-row">
                     <span>Contact Us</span>
                     <i className="fa-solid fa-arrow-right"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="flex flex-row">
-                    <span>Faq</span>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -64,47 +59,47 @@ const Footer = () => {
                 <li>
                   <i className="fa-solid fa-paper-plane"></i>
 
-                  <a href="#">
+                  <Link to="#">
                     Đường số 23, Phường 11, Quận 6, Thành phố Hồ Chí Minh, Việt
                     Nam
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <i className="fa-solid fa-paper-plane"></i>
-                  <a href="tel:0983731545">0983.731.545</a>
+                  <Link to="tel:0983731545">0983.731.545</Link>
                 </li>
                 <li>
                   <i className="fa-solid fa-paper-plane"></i>
-                  <a href="mailto:xuanphucdev1907@gmail.com">
+                  <Link to="mailto:xuanphucdev1907@gmail.com">
                     xuanphucdev1907@gmail.com
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </Col>
           <Col lg={3} md={6} sm={6}>
-            <div className="footer-col-3 flex flex-column">
+            <div className="footer-col-3 footer-col-4 flex flex-column">
               <h4>Account</h4>
               <ul>
                 <li>
-                  <a href="#">
+                  <Link to="#">
                     <i className="fa-solid fa-user"></i>Tài khoản
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link to="#">
                     <i className="fa-solid fa-user"></i>Đơn hàng
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link to="#">
                     <i className="fa-solid fa-user"></i>Hướng dẫn thanh toán
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link to="#">
                     <i className="fa-solid fa-user"></i>Chính sách thanh toán
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

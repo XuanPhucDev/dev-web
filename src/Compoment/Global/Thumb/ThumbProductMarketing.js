@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./ThumbProductMarketing.css";
 const ThumbProductMarketing = (props) => {
   return (
     <div className="thumb-product-marketing">

@@ -4,33 +4,25 @@ import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import SeoProduct from "../Product/SeoProduct";
 import { UseCart } from "../../../Context/Data/Cart";
+import useAxios from "../../../Context/API/UseAxios";
+import ConvertPrice from "../../Global/Thumb/ConvertPrice";
 
 const Product = () => {
   const { searchQuery } = useParams();
-  const [product, setProduct] = useState();
   const { handleAddToCart } = UseCart();
-  const getProduct = async () => {
-    try {
-      const resProduct = await fetch(
-        `https://fakestoreapi.com/products/${searchQuery}`
-      );
-      const dataProduct = await resProduct.json();
-      setProduct(dataProduct);
-    } catch (error) {
-      alert(error);
-    }
-  };
+
+  const product = useAxios(
+    "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
+  ).find((item) => item.id === searchQuery);
+
   const [count, setCount] = useState(1);
 
-  useEffect(() => {
-    getProduct();
-  }, []);
   const handleQuantity = (type) => {
     if (type === "plus") {
       setCount(count + 1);
     } else {
       if (count > 1) {
-      setCount(count - 1);
+        setCount(count - 1);
       }
     }
   };
@@ -38,11 +30,10 @@ const Product = () => {
     <>
       <Container>
         <Row className="product-detail-container">
-          {/* 50% Hình ảnh sản phẩm */}
           <Col lg={5} className="product-image-section">
             <div className="product-image-main">
               <img
-                src={product && product.image}
+                src={product && product.imagethumb}
                 alt={product && product.title}
               />
             </div>
@@ -50,7 +41,7 @@ const Product = () => {
 
           <Col lg={7} className="product-info-section">
             <h1>{product && product.title}</h1>
-            <p className="product-price">{product && product.price} $</p>
+              <ConvertPrice price={product && product.price}></ConvertPrice>
             <span type="minus" onClick={() => handleQuantity("minus")}>
               <i className="fa fa-minus" aria-hidden="true"></i>
             </span>

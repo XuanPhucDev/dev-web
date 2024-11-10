@@ -1,0 +1,10 @@
+.thumb-product-marketing a h4 {
+    font-size: 16px;
+    margin: 10px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-align: start;
+    color: var(--title-color);
+  }

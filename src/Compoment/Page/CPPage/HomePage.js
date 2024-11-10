@@ -19,7 +19,7 @@ const HomePage = () => {
       <Popular></Popular>
       <Vision></Vision>
       <Benefits></Benefits>
-      <Product></Product>
+      <Product ></Product>
       <FeedbackCustomer></FeedbackCustomer>
       <Blog></Blog>
       <ContactHomePage></ContactHomePage>
