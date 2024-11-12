@@ -21,7 +21,7 @@ const Banner = () => {
     <div className="banner-marketing flex flex-column">
       <Container>
         <Row>
-          <Col lg={6}>
+          <Col xl={6} lg={6} md={12} sm={12}>
             <div className="content-banner">
               <h4>Top #1 SEO & Marketing Agency</h4>
               <h2>Nâng cao thương hiệu của bạn với SEO và Digital Marketing</h2>
@@ -32,30 +32,37 @@ const Banner = () => {
                 thương hiệu.
               </p>
               <div className="contact flex flex-columns">
-                <Form.Select aria-label="Default select example" className="form-contact">
-                  <option>Doanh nghiệp của bạn về lĩnh vực gì ?</option>
-                  {cate.map((item) => (
-                    <option value={item.category}>{item.title}</option>
-                  ))}
-                  <option value="other">Khác</option>
-                </Form.Select>
-                <Form.Select aria-label="Default select example" className="form-contact">
-                  <option>Bạn cần tìm dịch vụ gì ?</option>
-                  <option value="thietkewebsite">Thiết kế website</option>
-                  <option value="thietkewebsite">Digital Marketing</option>
-                  <option value="other">Khác</option>
-                </Form.Select>
-                <div className="submit flex flex-row">
-                  <button>Tìm kiếm</button>
-                  <span>Hoặc</span>
-                  <Link to="/contact" className="contact-banner">
-                    Liên hệ ngay
-                  </Link>
-                </div>
+                <Form>
+                  <Form.Select
+                    aria-label="Default select example"
+                    className="form-contact"
+                  >
+                    <option>Doanh nghiệp của bạn về lĩnh vực gì ?</option>
+                    {cate.map((item) => (
+                      <option value={item.category}>{item.title}</option>
+                    ))}
+                    <option value="other">Khác</option>
+                  </Form.Select>
+                  <Form.Select
+                    aria-label="Default select example"
+                    className="form-contact"
+                  >
+                    <option>Bạn cần tìm dịch vụ gì ?</option>
+                    <option value="thietkewebsite">Thiết kế website</option>
+                    <option value="thietkewebsite">Digital Marketing</option>
+                    <option value="other">Khác</option>
+                  </Form.Select>
+                  <div className="submit flex flex-row">
+                    <button type="submit">Tìm kiếm</button>
+                    <Link to="/contact" className="contact-banner">
+                      Liên hệ ngay
+                    </Link>
+                  </div>
+                </Form>
               </div>
             </div>
           </Col>
-          <Col lg={6}>
+          <Col xl={6} lg={6} md={12} sm={12}>
             <div className="image-banner flex">
               <img src={personBanner} alt="" />
               <img className="bg-person-banner" src={bgPersonBanner} alt="" />

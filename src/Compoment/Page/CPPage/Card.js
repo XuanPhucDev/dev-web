@@ -1,29 +1,43 @@
 import React, { useState } from "react";
-import { UseCart } from "../../../Context/Data/Cart";
+import { UseCart } from "../../../Context/Data/DataCart";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import HeadingPage from "../../Global/Title/HeadingPage";
 import DataVoucher from "../../../Context/Data/DataVoucher";
 import ConvertPrice from "../../Global/Thumb/ConvertPrice";
+import ThumbCart from "../../Global/Thumb/ThumbCart";
 const Card = () => {
-  const { cart, handleQuantity, handleDelete } = UseCart();
+  const { cart, buyNow } = UseCart();
   const [errors, setErrors] = useState("");
   const [discount, setDiscount] = useState(0);
-  const sum = cart.reduce((prev, current) => {
-    return prev + current.quantity * current.price;
-  }, 0);
-  const [total, setTotal] = useState(cart.reduce((prev, current) => {
-    return prev + current.quantity * current.price;
-  }, 0));
-
+  const sum = buyNow
+    ? buyNow.reduce((prev, current) => {
+        return prev + current.quantity * current.price;
+      }, 0)
+    : cart.reduce((prev, current) => {
+        return prev + current.quantity * current.price;
+      }, 0);
+  const [total, setTotal] = useState(
+    buyNow
+      ? buyNow.reduce((prev, current) => {
+          return prev + current.quantity * current.price;
+        }, 0)
+      : cart.reduce((prev, current) => {
+          return prev + current.quantity * current.price;
+        }, 0)
+  );
+  console.log(buyNow);
+  console.log(cart);
+  console.log(total);
+  
   const handleVoucher = (e) => {
     if (e.key === "Enter") {
       const check = DataVoucher.find((item) => item.name === e.target.value);
       if (check) {
         setDiscount(check.discount);
         setErrors("");
-        setTotal(sum-(sum*check.discount));
+        setTotal(sum - sum * check.discount);
       } else {
         setErrors(
           "Mã Không Tồn Tại, Vui lòng nhập mã khác hoặc liên hệ với quản trị viên"
@@ -32,7 +46,6 @@ const Card = () => {
       }
     }
   };
-  console.log(discount);
 
   return (
     <div className="page-cart">
@@ -54,48 +67,13 @@ const Card = () => {
                 <th style={{ width: "10%" }}>Xoá</th>
               </tr>
               {cart.map((item, index) => (
-                <tr>
-                  <td>
-                    <img src={item.image} alt="" />
-                  </td>
-                  <td>
-                    <h3 className="title">{item.title}</h3>
-                  </td>
-                  <td>
-                    <span
-                      type="minus"
-                      onClick={() => handleQuantity("minus", index)}
-                    >
-                      <i className="fa fa-minus" aria-hidden="true"></i>
-                    </span>
-                    <input
-                      id="input-quantity"
-                      type="number"
-                      name="quantity"
-                      value={item.quantity}
-                      disabled="disabled"
-                    />
-                    <span
-                      type="plus"
-                      onClick={() => handleQuantity("plus", index)}
-                    >
-                      <i className="fa fa-plus"></i>
-                    </span>
-                  </td>
-                  <td>
-                    <ConvertPrice price={item.price}></ConvertPrice>
-                  </td>
-                  <td>
-                    <ConvertPrice
-                      price={item.price * item.quantity}
-                    ></ConvertPrice>
-                  </td>
-                  <td>
-                    <a href="javascript:;" onClick={() => handleDelete(index)}>
-                      <i className="fa-solid fa-trash-can"></i>
-                    </a>
-                  </td>
-                </tr>
+                <ThumbCart
+                  image={item.image}
+                  title={item.title}
+                  index={index}
+                  quantity={item.quantity}
+                  price={item.price}
+                ></ThumbCart>
               ))}
             </table>
           </Col>
@@ -104,9 +82,7 @@ const Card = () => {
               <div className="info">
                 <div>Tổng Đơn Hàng: </div>
                 <div className="total">
-                  <ConvertPrice
-                    price={total}
-                  ></ConvertPrice>
+                  <ConvertPrice price={total}></ConvertPrice>
                 </div>
               </div>
               <div className="voucher">

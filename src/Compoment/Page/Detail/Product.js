@@ -3,29 +3,37 @@ import "./Product.css";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import SeoProduct from "../Product/SeoProduct";
-import { UseCart } from "../../../Context/Data/Cart";
+import { UseCart } from "../../../Context/Data/DataCart";
 import useAxios from "../../../Context/API/UseAxios";
 import ConvertPrice from "../../Global/Thumb/ConvertPrice";
+import { useNavigate } from "react-router-dom";
+import ThumbPopUpForm from "../../Global/Thumb/ThumbPopUpForm";
+import ThumbQty from "../../Global/Thumb/ThumbQty";
 
 const Product = () => {
   const { searchQuery } = useParams();
   const { handleAddToCart } = UseCart();
-
+  const navigate = useNavigate();
+  const [cart, setCart] = useState(
+    localStorage.getItem("BuyNow")
+      ? JSON.parse(localStorage.getItem("BuyNow"))
+      : []
+  );
+  const handleBuyNow = (product) => {
+    const newCart = [product];
+    newCart[0].quantity
+      ? (newCart[0].quantity += 1)
+      : (newCart[0].quantity = 1);
+    console.log(newCart);
+    setCart(newCart);
+    localStorage.setItem("BuyNow", JSON.stringify(newCart));
+    navigate("/cart/buy-now");
+  };
   const product = useAxios(
     "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
   ).find((item) => item.id === searchQuery);
 
-  const [count, setCount] = useState(1);
 
-  const handleQuantity = (type) => {
-    if (type === "plus") {
-      setCount(count + 1);
-    } else {
-      if (count > 1) {
-        setCount(count - 1);
-      }
-    }
-  };
   return (
     <>
       <Container>
@@ -41,25 +49,13 @@ const Product = () => {
 
           <Col lg={7} className="product-info-section">
             <h1>{product && product.title}</h1>
-              <ConvertPrice price={product && product.price}></ConvertPrice>
-            <span type="minus" onClick={() => handleQuantity("minus")}>
-              <i className="fa fa-minus" aria-hidden="true"></i>
-            </span>
-            <input
-              id="input-quantity"
-              type="number"
-              name="quantity"
-              value={count}
-              disabled="disabled"
-            />
-            <span type="plus" onClick={() => handleQuantity("plus")}>
-              <i className="fa fa-plus"></i>
-            </span>
+            <ConvertPrice price={product && product.price}></ConvertPrice>
+            <ThumbQty></ThumbQty>
 
             <h4>Đặc điểm nổi bật</h4>
             <p className="product-features">{product && product.description}</p>
             <div className="product-actions">
-              <button className="order-now-button">Đặt Hàng</button>
+              <ThumbPopUpForm product={product}></ThumbPopUpForm>
               <button
                 className="add-to-cart-button"
                 onClick={() => handleAddToCart(product)}

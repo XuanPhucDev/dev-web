@@ -1,7 +1,3 @@
-.homepage {
-  height: 100%;
-  width: 100%;
-}
 .banner {
   position: relative;
   height: 100vh;
@@ -72,24 +68,16 @@
   padding: 2px;
   margin: 2px;
 }
-.banner-marketing{
-  margin: 0 auto;
-}
-.banner-marketing .row {
-justify-content: space-between;
-align-items: center;
-}
 
-
-.list-about .col-lg-3{
-text-align: center;
+.list-about .col-lg-3 {
+  text-align: center;
 }
-.list-about .col-lg-3 img{
-height: 300px;
+.list-about .col-lg-3 img {
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
-.list-about .col-lg-3 p{
+.list-about .col-lg-3 p {
   font-size: 20px;
   padding: 10px 0;
   font-weight: bold;

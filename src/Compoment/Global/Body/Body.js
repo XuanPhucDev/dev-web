@@ -20,6 +20,9 @@ import PageBlog from "../../Page/CPPage/PageBlog";
 import PageContact from "../../Page/CPPage/PageContact";
 import CaseStudies from "../../Page/CPPage/CaseStudies";
 import PageTestimonials from "../../Page/CPPage/PageTestimonials";
+import AddProduct from "../../Page/Admin/Controller/AddProduct";
+import ListProduct from "../../Page/Admin/Controller/ListProduct";
+import UpdateProduct from "../../Page/Admin/Controller/UpdateProduct";
 
 const Body = () => {
   return (
@@ -30,6 +33,7 @@ const Body = () => {
         <Route path="/about-us" element={<AboutUs />}></Route>
         <Route path="/search/:searchQuery" element={<Search />}></Route>
         <Route path="/product/:searchQuery" element={<Product />}></Route>
+        <Route path="/update-product/:slug" element={<UpdateProduct />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
         <Route path="/thiet-ke-website" element={<Category />}></Route>
@@ -39,6 +43,8 @@ const Body = () => {
         <Route path="/contact" element={<PageContact />}></Route>
         <Route path="/services" element={<PageServices />}></Route>
         <Route path="/pricing-plan" element={<PricingPlan />}></Route>
+        <Route path="/add-product" element={<AddProduct />}></Route>
+        <Route path="/list-product" element={<ListProduct />}></Route>
         <Route path="/case-studies" element={<CaseStudies />}></Route>
         <Route path="/testimonials" element={<PageTestimonials />}></Route>
         <Route

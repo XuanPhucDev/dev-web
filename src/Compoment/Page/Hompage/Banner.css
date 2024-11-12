@@ -3,6 +3,11 @@
   height: 100vh;
   position: relative;
   display: flex;
+  margin: 0 auto;
+}
+.banner-marketing .row {
+  justify-content: start;
+  align-items: center;
 }
 .banner-marketing .content-banner {
   align-items: start;
@@ -122,7 +127,7 @@
 
 .banner-marketing .anni {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 5%;
 }
 .banner-marketing .anni img {
@@ -134,24 +139,74 @@
   font-size: 52px;
   font-weight: 600;
 }
-.banner-marketing .contact-banner p,.banner-marketing .content-banner p{
+.banner-marketing .contact-banner p,
+.banner-marketing .content-banner p {
   font-size: 18px;
   font-weight: 400;
   text-align: justify;
 }
-.banner-marketing .contact .form-contact{
+.banner-marketing .contact .form-contact {
   padding: 20px;
+  margin: 10px 0;
   border-radius: 44px;
   font-size: 18px;
 }
-@media (max-width: 992px) {
+@media (max-width: 1600px) {
+  .banner-marketing .image-banner {
+    width: 90%;
+  }
+}
+@media (max-width: 1300px) {
+  .banner-marketing .content-banner {
+    width: 100%;
+  }
+  .banner-marketing .content-banner h2 {
+    font-size: 28px;
+  }
   .banner-marketing .anni {
     left: 85%;
   }
 }
-@media (max-width: 1250px) {
-  .banner-marketing .content-banner {
-    width: 80%;
+@media (max-width: 1200px) {
+  .banner-marketing .contact .form-contact{
+    font-size: 14px;
+  }
+  .banner-marketing .contact-banner p, .banner-marketing .content-banner p{
+    font-size: 16px;
+  }
+}
+@media (max-width: 1067px) {
+  .banner-marketing .contact-banner, .banner-marketing .contact button{
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 992px) {
+  .banner-marketing .row .col-md-12{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner-marketing .image-banner {
+    width: 75%;
+  }
+  .banner-marketing .anni{
+    top: 45%;
+    left: 50%;
+  }
+  .banner-marketing .contact{
+    width: 100%;
+  }
+  .banner-marketing .contact form{
+    width: 100%;
+  }
+  .banner-marketing .contact .form-contact{
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px){
+  .banner-marketing{
+    margin-top: 60px;
   }
 }
 @media (max-width: 600px) {

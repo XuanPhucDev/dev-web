@@ -1,0 +1,16 @@
+.admin-list-product table{
+    border: 1px solid var(--primary-color)
+}
+.admin-list-product th{
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.admin-list-product th, .admin-list-product td{
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+}
+.icon-function a{
+    display: inline-block;
+    padding: 0 20px;
+}

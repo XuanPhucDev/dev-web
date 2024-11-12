@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap/";
 import logoCoffee from "../../../Asset/Images/logo/logo-agency.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { UseCart } from "../../../Context/Data/Cart";
+import { UseCart } from "../../../Context/Data/DataCart";
 import { InputGroup, Form } from "react-bootstrap";
 import useAxios from "../../../Context/API/UseAxios";
 
@@ -13,7 +13,7 @@ const Header = () => {
   const dataAdmin = useAxios(
     "https://6724cb3bc39fedae05b2bf65.mockapi.io/categoryProduct/category"
   );
-    const check = dataAdmin.find((item) => item.email === emailUser);
+  const check = dataAdmin.find((item) => item.email === emailUser);
   const { cart } = UseCart();
   console.log();
   const handleInputSearch = (e) => {
@@ -58,6 +58,27 @@ const Header = () => {
           </NavLink>
         </NavLink>
         <div className="flex flex-row user">
+        {check ? (
+            <div className="menu-item menu-user">
+              <NavLink to="/user">
+                <span>
+                  Xin chào, <i className="fa-solid fa-user"></i> {check.role}
+                </span>
+              </NavLink>
+              <div className="sub-menu-services">
+                <Link to="/user">Sửa hồ sơ</Link>
+                <Link to="/add-product">Thêm sản phẩm</Link>
+                <Link to="/list-product">Danh sách sản phẩm</Link>
+                <Link to="/logout">Đăng xuất</Link>
+              </div>
+            </div>
+          ) : (
+            <NavLink to="/login">
+              <span>
+                <i className="fa-solid fa-user"></i>Đăng nhập
+              </span>
+            </NavLink>
+          )}
           <InputGroup>
             <Form.Control
               onKeyDown={handleInputSearch}
@@ -77,25 +98,7 @@ const Header = () => {
               </i>
             </span>
           </Link>
-          {check ? (
-            <div className="menu-item menu-user">
-              <NavLink to="/user">
-                <span>
-                  Xin chào, <i className="fa-solid fa-user"></i> {check.role}
-                </span>
-              </NavLink>
-              <div className="sub-menu-services">
-                <Link to="/user">Sửa hồ sơ</Link>
-                <Link to="/logout">Đăng xuất</Link>
-              </div>
-            </div>
-          ) : (
-            <NavLink to="/login">
-              <span>
-                <i className="fa-solid fa-user"></i>Đăng nhập
-              </span>
-            </NavLink>
-          )}
+          
         </div>
         <NavLink className="flex flex-row social">
           <Nav.Link to="/">
@@ -129,7 +132,9 @@ const Header = () => {
 
         {/* Logo ở giữa */}
         <div className="menu-center">
-          <img src={logoCoffee} alt="Logo" className="logo" />
+          <Link to="/">
+            <img src={logoCoffee} alt="Logo" className="logo" />
+          </Link>
         </div>
 
         {/* Icon bên phải */}

@@ -2,7 +2,7 @@ import React from "react";
 import "./CardProduct.css";
 import {  Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { UseCart } from "../../../Context/Data/Cart";
+import { UseCart } from "../../../Context/Data/DataCart";
 import ConvertPrice from "../Thumb/ConvertPrice";
 
 const CardProduct = ({id,image,title,description,price}) => {

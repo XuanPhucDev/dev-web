@@ -25,7 +25,7 @@ const Partner = () => {
           <Title des="Về D.A.C" title="Đối tác nổi bật"></Title>
           </Col>
           <Col lg={9}>
-            <div className="slide-partner">
+            <div className="slide-partner mt-4">
               <Slider {...settings}>
                 {dataPartner.map((item) => (
                   <div>
