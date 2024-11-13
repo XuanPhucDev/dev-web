@@ -60,7 +60,7 @@ const Header = () => {
         <div className="flex flex-row user">
         {check ? (
             <div className="menu-item menu-user">
-              <NavLink to="/user">
+              <NavLink to="/admin-page">
                 <span>
                   Xin chào, <i className="fa-solid fa-user"></i> {check.role}
                 </span>

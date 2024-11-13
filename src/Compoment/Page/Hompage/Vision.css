@@ -88,3 +88,13 @@
 .vision .col-right p{
   margin: 0;
 }
+@media (max-width: 992px) {
+  .vision .row .col-lg-6{
+    height: auto;
+  }
+  .vision .our-value{
+    height: 375px;
+    background-position: bottom;
+    margin-bottom: 20px;
+  }
+}

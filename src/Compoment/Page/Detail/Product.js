@@ -32,10 +32,8 @@ const Product = () => {
   const product = useAxios(
     "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
   ).find((item) => item.id === searchQuery);
-
-
   return (
-    <>
+    <div className="detail-product space-compoment">
       <Container>
         <Row className="product-detail-container">
           <Col lg={5} className="product-image-section">
@@ -48,6 +46,31 @@ const Product = () => {
           </Col>
 
           <Col lg={7} className="product-info-section">
+            <div className="info flex flex-row">
+              <p>
+                By <span>{product && product.user}</span>
+              </p>
+              <p>
+                <i className="fa-solid fa-cart-shopping"></i>{" "}
+                {product && product.count} sales
+              </p>
+              <p id={product && product.update ? "active" : "normal"}>
+                Recently Updated{" "}
+                {product && product.update ? (
+                  <i className="fa-solid fa-circle-check"></i>
+                ) : (
+                  <i className="fa-solid fa-circle-xmark"></i>
+                )}{" "}
+              </p>
+              <p id={product && product.update ? "active" : "normal"}>
+                Well Documented{" "}
+                {product && product.update ? (
+                  <i className="fa-solid fa-circle-check"></i>
+                ) : (
+                  <i className="fa-solid fa-circle-xmark"></i>
+                )}{" "}
+              </p>
+            </div>
             <h1>{product && product.title}</h1>
             <ConvertPrice price={product && product.price}></ConvertPrice>
             <ThumbQty></ThumbQty>
@@ -56,6 +79,7 @@ const Product = () => {
             <p className="product-features">{product && product.description}</p>
             <div className="product-actions">
               <ThumbPopUpForm product={product}></ThumbPopUpForm>
+
               <button
                 className="add-to-cart-button"
                 onClick={() => handleAddToCart(product)}
@@ -78,7 +102,7 @@ const Product = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

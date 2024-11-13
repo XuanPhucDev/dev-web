@@ -3,6 +3,8 @@ import "./CategoryProduct.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CardProduct from "../../Global/CardProduct/CardProduct.js";
 import useFetch from "../../../Context/API/ApiProduct.js";
+import HeadingPage from "../../Global/Title/HeadingPage.js";
+import Title from "../../Global/Title/Title.js";
 const CategoryProduct = (props) => {
   const ApiProduct = useFetch(
     "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
@@ -96,123 +98,155 @@ const CategoryProduct = (props) => {
 
   return (
     <>
-      <div className="cate-product">
-        <Row className="heading-center">
-          <h2>
-            {props.search ? `Tìm kiếm: ${props.search}` : "Trang Sản Phẩm"}
-          </h2>
-        </Row>
-        <Row className="filter-product">
-          <Col lg={6}>
-            <h3>Lọc theo giá</h3>
-            <form action="#" className="filter-by-price">
-              {/* Checkbox "Dưới 99.000 đ" */}
-              <input
-                type="checkbox"
-                value={"all"}
-                onClick={handlePrice}
-                name="all"
-                id="all"
-                checked={selectedCheckbox === "all"} // Chỉ chọn nếu nó đang được chọn
-              />
-               <label htmlFor="all">Tất cả</label>
-              {/* Checkbox "Từ 100.000 đ đến 299.000 đ" */}
-              <input
-                type="checkbox"
-                value={"0-99"}
-                onClick={handlePrice}
-                name="0-99"
-                id="0-99"
-                checked={selectedCheckbox === "0-99"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="0-99">Dưới 99.000 đ</label>
-              {/* Checkbox "Từ 100.000 đ đến 299.000 đ" */}
-              <input
-                type="checkbox"
-                value={"100-299"}
-                onClick={handlePrice}
-                name="100-299"
-                id="100-299"
-                checked={selectedCheckbox === "100-299"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="100-299">100.000 đ - 299.000 đ</label>
-              {/* Checkbox "Từ 300.000 đ đến 499.000 đ" */}
-              <input
-                type="checkbox"
-                value={"300-499"}
-                onClick={handlePrice}
-                name="300-499"
-                id="300-499"
-                checked={selectedCheckbox === "300-499"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="300-499">300.000 đ - 499.000 đ</label>
-              {/* Checkbox "Từ 500.000 đ đến max" */}
-              <input
-                type="checkbox"
-                value={"500"}
-                onClick={handlePrice}
-                name="500"
-                id="500"
-                checked={selectedCheckbox === "500"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="500">Trên 500.000 đ</label>
-            </form>
-          </Col>
-          <Col lg={6}>
-            <h3>Sắp xếp</h3>
-            <form action="#" className="filter-by-price">
-              <input
-                type="checkbox"
-                value="max"
-                onClick={handlefilterText}
-                name="max"
-                id="max"
-                checked={selectedValue === "max"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="max">Giá từ thấp đến cao</label>
-              <input
-                type="checkbox"
-                value="min"
-                onClick={handlefilterText}
-                name="min"
-                id="min"
-                checked={selectedValue === "min"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="min">Giá từ cao đến thấp</label>
-              <input
-                type="checkbox"
-                value="rating"
-                onClick={handlefilterText}
-                name="rating"
-                id="rating"
-                checked={selectedValue === "rating"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="rating">Đánh giá</label>
-              <input
-                type="checkbox"
-                value="count"
-                onClick={handlefilterText}
-                name="count"
-                id="count"
-                checked={selectedValue === "count"} // Chỉ chọn nếu nó đang được chọn
-              />
-              <label htmlFor="count">Lượt Mua Hàng</label>
-            </form>
-          </Col>
-        </Row>
-        <Row className="product-card">
-          {fileterProduct &&
-            fileterProduct.map((item) => (
-              <CardProduct
-                key={item.id}
-                id={item.id}
-                image={item.imagethumb}
-                title={item.title}
-                price={item.price}
-                description={item.description}
-              ></CardProduct>
-            ))}
-        </Row>
+      <div className="cate-product ">
+        <HeadingPage
+          title={props.search ? `Tìm kiếm: ${props.search}` : "Trang Sản Phẩm"}
+        ></HeadingPage>
+        <Container>
+          <div className="space-compoment"></div>
+          <Row>
+            <Col lg={3}>
+              <div className="filter ">
+                <div className="filter-value">
+                  <Title title="Giá sản phẩm" des="Lọc sản phẩm: "></Title>
+                  <form action="#" className="filter-by-price">
+                    <div className="form-tick">
+                      <input
+                        type="checkbox"
+                        value={"all"}
+                        onClick={handlePrice}
+                        name="all"
+                        id="all"
+                        checked={selectedCheckbox === "all"}
+                      />
+                      <label htmlFor="all">Tất cả</label>
+                    </div>
+                    <div className="form-tick">
+                      <input
+                        type="checkbox"
+                        value={"0-99"}
+                        onClick={handlePrice}
+                        name="0-99"
+                        id="0-99"
+                        checked={selectedCheckbox === "0-99"}
+                      />
+                      <label htmlFor="0-99">Dưới 99.000 đ</label>
+                    </div>
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value={"100-299"}
+                        onClick={handlePrice}
+                        name="100-299"
+                        id="100-299"
+                        checked={selectedCheckbox === "100-299"}
+                      />
+                      <label htmlFor="100-299">100.000 đ - 299.000 đ</label>
+                    </div>
+                    <div className="form-tick">
+                      <input
+                        type="checkbox"
+                        value={"300-499"}
+                        onClick={handlePrice}
+                        name="300-499"
+                        id="300-499"
+                        checked={selectedCheckbox === "300-499"}
+                      />
+                      <label htmlFor="300-499">300.000 đ - 499.000 đ</label>
+                    </div>
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value={"500"}
+                        onClick={handlePrice}
+                        name="500"
+                        id="500"
+                        checked={selectedCheckbox === "500"}
+                      />
+                      <label htmlFor="500">Trên 500.000 đ</label>
+                    </div>
+                    <div className="form-tick"></div>
+                  </form>
+                </div>
+                <div className="filter-price">
+                  <Title title="Sắp xếp sản phẩm" des="Lọc sản phẩm: "></Title>
+
+                  <form action="#" className="filter-by-price">
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value="max"
+                        onClick={handlefilterText}
+                        name="max"
+                        id="max"
+                        checked={selectedValue === "max"}
+                      />
+                      <label htmlFor="max">Giá từ thấp đến cao</label>
+                    </div>
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value="min"
+                        onClick={handlefilterText}
+                        name="min"
+                        id="min"
+                        checked={selectedValue === "min"}
+                      />
+                      <label htmlFor="min">Giá từ cao đến thấp</label>
+                    </div>
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value="rating"
+                        onClick={handlefilterText}
+                        name="rating"
+                        id="rating"
+                        checked={selectedValue === "rating"}
+                      />
+                      <label htmlFor="rating">Đánh giá</label>
+                    </div>
+                    <div className="form-tick">
+                      {" "}
+                      <input
+                        type="checkbox"
+                        value="count"
+                        onClick={handlefilterText}
+                        name="count"
+                        id="count"
+                        checked={selectedValue === "count"}
+                      />
+                      <label htmlFor="count">Lượt Mua Hàng</label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </Col>
+            <Col lg={9}>
+              <div className="list-product">
+                <Row>
+                  {fileterProduct &&
+                    fileterProduct.map((item) => (
+                      <Col lg={3}>
+                        <CardProduct
+                          key={item.id}
+                          id={item.id}
+                          image={item.imagethumb}
+                          title={item.title}
+                          price={item.price}
+                          description={item.description}
+                        ></CardProduct>
+                      </Col>
+                    ))}
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

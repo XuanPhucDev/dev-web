@@ -211,7 +211,8 @@
 }
 @media (max-width: 600px) {
   .banner-marketing .anni {
-    left: 80%;
+    left: 50%;
+    top: 51%;
   }
 }
 @keyframes animationtop {

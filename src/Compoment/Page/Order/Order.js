@@ -1,69 +1,114 @@
 import React, { useRef } from "react";
 import "./Order.css";
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import ApiForm from "../../../Features/ApiForm";
+import { Container, Row, Col } from "react-bootstrap";
+import HeadingPage from "../../Global/Title/HeadingPage";
 
 const Order = () => {
   const form = useRef();
-
   const formik = useFormik({
     initialValues: {
-      user_name: "",
-      user_email: "",
+      first_name: "",
+      last_name: "",
+      phone: "",
+      province: "",
+      district: "",
+      ward: "",
+      location: "",
+      email: "",
       message: "",
     },
     validationSchema: Yup.object({
-      user_name: Yup.string().required("Required"),
-      user_email: Yup.string()
+      first_name: Yup.string().required("Vui lòng điền HỌ của quý khách"),
+      last_name: Yup.string().required("Vui lòng điền TÊN của quý khách"),
+      phone: Yup.string().required("Vui lòng điền SỐ ĐIỆN THOẠI của quý khách"),
+      province: Yup.string().required("Tỉnh is required"),
+      district: Yup.string().required("Quận is required"),
+      ward: Yup.string().required("Xã is required"),
+      location: Yup.string().required("Xã is required"),
+      email: Yup.string()
         .email("Invalid email address")
-        .required("Required"),
+        .required("Vui lòng điền EMAIL của quý khách"),
     }),
     onSubmit: async (values) => {
       console.log(values);
+
+      emailjs
+        .sendForm("service_u2wexxs", "template_0s1ysjp", form.current, {
+          publicKey: "cXOgRNnywX48acMXh",
+        })
+        .then(
+          () => {
+            alert("Mua hàng thành công !");
+          },
+          (error) => {
+            console.log("Đã có lỗi từ cửa hàng...", error.text);
+          }
+        );
     },
   });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_u2wexxs", "template_x2cndy8", form.current, {
-        publicKey: "cXOgRNnywX48acMXh",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
-  };
-
   return (
-    <form ref={form} id="form-order" onSubmit={sendEmail}>
-      <input
-        type="text"
-        onChange={formik.handleChange}
-        name="user_name"
-        placeholder="Your Name"
-      />
-      {formik.touched.user_name && formik.errors.user_name ? (
-        <div className="error">{formik.errors.user_name}</div>
-      ) : null}
-      <input
-        type="email"
-        onChange={formik.handleChange}
-        name="user_email"
-        placeholder="Your Email"
-      />
-      {formik.touched.user_email && formik.errors.user_email ? (
-        <div className="error">{formik.errors.user_email}</div>
-      ) : null}
-      <textarea name="message" placeholder="Your Message" />
-      <button type="submit">Send</button>
-    </form>
+    <div className="contact-form">
+      <HeadingPage title="Thanh toán"></HeadingPage>
+
+      <Container>
+        <Row>
+          <form ref={form} id="form-order" onSubmit={formik.handleSubmit}>
+            <label htmlFor="first_name">Họ</label>
+            <input
+              type="text"
+              onChange={formik.handleChange}
+              name="first_name"
+              id="first_name"
+              placeholder="Họ của quý khách"
+            />
+            {formik.touched.first_name && formik.errors.first_name ? (
+              <div className="error">{formik.errors.first_name}</div>
+            ) : null}
+            <label htmlFor="last_name">Tên</label>
+            <input
+              type="text"
+              onChange={formik.handleChange}
+              name="last_name"
+              id="last_name"
+              placeholder="Tên của quý khách"
+            />
+            {formik.touched.last_name && formik.errors.last_name ? (
+              <div className="error">{formik.errors.last_name}</div>
+            ) : null}
+            <label htmlFor="last_name">Email</label>
+            <input
+              type="email"
+              onChange={formik.handleChange}
+              name="email"
+              id="email"
+              placeholder="Email của quý khách"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div className="error">{formik.errors.email}</div>
+            ) : null}
+            <label htmlFor="last_name">Số điện thoại</label>
+            <input
+              type="phone"
+              onChange={formik.handleChange}
+              name="phone"
+              id="phone"
+              placeholder="Số điện thoại của quý khách"
+            />
+            {formik.touched.phone && formik.errors.phone ? (
+              <div className="error">{formik.errors.phone}</div>
+            ) : null}
+            <ApiForm formik={formik}></ApiForm>
+            <textarea name="message" placeholder="Your Message" />
+            <button type="submit">Send</button>
+          </form>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

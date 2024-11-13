@@ -114,3 +114,8 @@
     height: 400px;
   }
 }
+@media (max-width:992px) {
+  .about-marketing .person-1, .about-marketing .person-2{
+    display: none;
+  }
+}

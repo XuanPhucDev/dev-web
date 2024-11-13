@@ -1,8 +1,20 @@
 .body-page {
-  margin-left: 200px;
+  margin-top: 175px;
   background-image: url("../../../Asset/Images/Homepage/header-bg1.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (max-width: 1400px) {
+  .body-page {
+    margin-top: 125px;
+
+  }
+}
+@media (max-width: 991px) {
+  .body-page {
+    margin-top: 50px;
+
+  }
 }
 @media (max-width: 768px) {
   .body-page {

@@ -4,8 +4,8 @@ import { Col, Row, Tab, Tabs } from "react-bootstrap";
 import ThumbProductMarketing from "./ThumbProductMarketing";
 import "./ThumbTab.css";
 const ThumbTab = (props) => {
-  const data = props.data;
   const cate = useAxios(props.cate);
+  const data = useAxios(props.data);
   const [filterData, setFilterData] = useState([data]);
   const handleChangData = (e) => {
     setFilterData(data.filter((item) => item.category === e));

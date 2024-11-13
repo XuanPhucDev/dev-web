@@ -12,20 +12,22 @@ const UpdateProduct = () => {
   const { linkCate, linkProduct } = UseCart();
   const cate = useAxios(linkCate);
   const data = useAxios(`${linkProduct}/${keyValue}`);
-
-  const [dataProduct, setDataProduct] = useState({
-    title: "",
-    code: "",
-    sale: "",
-    qty: "",
-    imagethumb: "",
-    price: "",
-    category: "",
-    description: "",
-  });
-  const handleUpdateProduct = async () => {
+console.log(data);
+  const [dataProduct, setDataProduct] = useState([data]);
+  // const [dataProduct, setDataProduct] = useState({
+  //   title: "",
+  //   code: "",
+  //   sale: "",
+  //   qty: "",
+  //   imagethumb: "",
+  //   price: "",
+  //   category: "",
+  //   description: "",
+  // });
+  const handleUpdateProduct = async (e) => {
+    e.preventDefault();
     try {
-      await axios.put(`${linkProduct}/${keyValue + 1}`, {
+      await axios.put(`${linkProduct}/${keyValue}`, {
         title: dataProduct.title,
         code: dataProduct.code,
         sale: dataProduct.sale,
@@ -60,7 +62,7 @@ const UpdateProduct = () => {
       <div className="form-add-product">
         <Container>
           <Row>
-            <Title title="Thêm sản phẩm mới"></Title>
+            <Title title={`Cập nhật sản phẩm: ${data.title}`}></Title>
           </Row>
           <Form noValidate validated={validated} onSubmit={handleUpdateProduct}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -73,7 +75,7 @@ const UpdateProduct = () => {
                 onChange={(e) =>
                   setDataProduct({ ...dataProduct, title: e.target.value })
                 }
-                value={data.title}
+                value={dataProduct.title}
               />
               <Form.Control.Feedback type="invalid">
                 Vui lòng nhập tiêu đề sản phẩm.
@@ -88,7 +90,7 @@ const UpdateProduct = () => {
                 onChange={(e) =>
                   setDataProduct({ ...dataProduct, code: e.target.value })
                 }
-                value={data.code}
+                value={dataProduct.code}
                 placeholder="Mã sản phẩm"
               />
               <Form.Control.Feedback type="invalid">
@@ -105,7 +107,7 @@ const UpdateProduct = () => {
                   onChange={(e) =>
                     setDataProduct({ ...dataProduct, price: e.target.value })
                   }
-                  value={data.price}
+                  value={dataProduct.price}
                 />
                 <Form.Control.Feedback type="invalid">
                   Vui lòng nhập giá bán sản phẩm.
@@ -119,7 +121,7 @@ const UpdateProduct = () => {
                   onChange={(e) =>
                     setDataProduct({ ...dataProduct, sale: e.target.value })
                   }
-                  value={data.sale}
+                  value={dataProduct.sale}
                 />
               </Form.Group>
             </Row>
@@ -132,7 +134,7 @@ const UpdateProduct = () => {
                 onChange={(e) =>
                   setDataProduct({ ...dataProduct, qty: e.target.value })
                 }
-                value={data.qty}
+                value={dataProduct.qty}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -145,7 +147,7 @@ const UpdateProduct = () => {
                 onChange={(e) =>
                   setDataProduct({ ...dataProduct, imagethumb: e.target.value })
                 }
-                value={data.imagethumb}
+                value={dataProduct.imagethumb}
               />
             </Form.Group>
             <Form.Select
@@ -154,7 +156,7 @@ const UpdateProduct = () => {
                 setDataProduct({ ...dataProduct, category: e.target.value })
               }
             >
-              <option> {data.category}</option>
+              <option> {dataProduct.category}</option>
               {cate.map((item) => (
                 <option value={item.title} key={item.id}>
                   {item.title}
@@ -173,7 +175,7 @@ const UpdateProduct = () => {
                     description: e.target.value,
                   })
                 }
-                value={data.description}
+                value={dataProduct.description}
                 as="textarea"
                 rows={3}
               />

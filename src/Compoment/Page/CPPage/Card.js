@@ -27,9 +27,6 @@ const Card = () => {
           return prev + current.quantity * current.price;
         }, 0)
   );
-  console.log(buyNow);
-  console.log(cart);
-  console.log(total);
   
   const handleVoucher = (e) => {
     if (e.key === "Enter") {
@@ -103,7 +100,7 @@ const Card = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> 
     </div>
   );
 };

@@ -1,10 +1,49 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
 import ApiForm from "../../../Features/ApiForm";
 import "./ThumbContact.css";
 const ThumbForm = () => {
+  const form = useRef();
+
+  const formik = useFormik({
+    initialValues: {
+      user_name: "",
+      user_email: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      user_name: Yup.string().required("Required"),
+      user_email: Yup.string()
+        .email("Invalid email address")
+        .required("Required"),
+    }),
+    onSubmit: async (values) => {
+      console.log(values);
+    },
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_u2wexxs", "template_x2cndy8", form.current, {
+        publicKey: "cXOgRNnywX48acMXh",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="contact-form">
-      <form action="/submit-form" method="POST">
+      <form ref={form} id="form-order" onSubmit={sendEmail}>
         <div className="form-name flex flex-row">
           <div className="form-group input-name">
             <label htmlFor="firstname">Họ</label>

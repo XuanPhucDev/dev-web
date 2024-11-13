@@ -45,7 +45,7 @@
     width: 80%;
     color: white
 }
- .contact-form {
+ .contact-homepage .contact-form {
     width: 100%;
     background-color: var(--background-button-color);
     padding: 20px;

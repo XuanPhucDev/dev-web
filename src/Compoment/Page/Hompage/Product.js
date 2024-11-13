@@ -15,7 +15,7 @@ const Product = () => {
           ></Title>
         </FadeInSection>
         <ThumbTab
-          data={DataProduct}
+          data="https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing?limit=8&page=1"
           cate="https://671eebe51dfc429919836d48.mockapi.io/myweb/categoryMarketing"
         ></ThumbTab>
       </Container>

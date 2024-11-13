@@ -23,6 +23,7 @@ import PageTestimonials from "../../Page/CPPage/PageTestimonials";
 import AddProduct from "../../Page/Admin/Controller/AddProduct";
 import ListProduct from "../../Page/Admin/Controller/ListProduct";
 import UpdateProduct from "../../Page/Admin/Controller/UpdateProduct";
+import PageAdmin from "../../Page/Admin/AdminPage/PageAdmin";
 
 const Body = () => {
   return (
@@ -47,6 +48,7 @@ const Body = () => {
         <Route path="/list-product" element={<ListProduct />}></Route>
         <Route path="/case-studies" element={<CaseStudies />}></Route>
         <Route path="/testimonials" element={<PageTestimonials />}></Route>
+        <Route path="/admin-page" element={<PageAdmin />}></Route>
         <Route
           path="/product-marketing/:slug"
           element={<ProductMarketing />}

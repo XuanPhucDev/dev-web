@@ -20,7 +20,7 @@ const Popular = () => {
         </Row>
         <Row className="services">
           {FeaturesTop.map((item) => (
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={12}>
               <ThumbServices title={item.title} images={item.images} content={item.content}></ThumbServices>
             </Col>
           ))}

@@ -9,11 +9,25 @@ const FeedbackCustomer = () => {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 1000,
     autoplaySpeed: 4000,
     cssEase: "linear",
-    pauseOnHover: true
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1200, // Tablet
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768, // Mobile
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   };
   return (
     <div className="feedback-homepage space-compoment">
@@ -27,7 +41,7 @@ const FeedbackCustomer = () => {
             <Slider {...settings}>
               {DataFeedback.map((item) => (
                 <div className="thumb-review ">
-                  <div className="flex flex-row">
+                  <div className="flex">
                     <div className="text-thumb-review">
                       <p id="comment">{item.comment}</p>
                       <div className="info">

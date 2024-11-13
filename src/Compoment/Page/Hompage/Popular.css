@@ -11,7 +11,9 @@
 .popular .services {
   margin: 20px 0;
 }
-
+.popular .services .col-md-6{
+  margin-bottom: 20px;
+}
 .popular .services .col-lg-3:first-child .thumb-services {
   background-color: #febfda;
 }
