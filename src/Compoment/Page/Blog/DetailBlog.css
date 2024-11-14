@@ -1,0 +1,59 @@
+.blog-detail {
+  margin: 50px auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Header của bài blog */
+.blog-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+.blog-meta {
+  font-size: 1.2em;
+  color: #999;
+}
+
+.blog-date {
+  font-style: italic;
+  color: #666;
+}
+
+/* Bố cục cho phần content */
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Phần hình ảnh */
+.blog-image-container {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Phần nội dung bài viết */
+.blog-text {
+  font-size: 1.2em;
+  color: #444;
+  line-height: 1.8;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}

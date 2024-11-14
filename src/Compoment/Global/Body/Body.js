@@ -24,6 +24,8 @@ import AddProduct from "../../Page/Admin/Controller/AddProduct";
 import ListProduct from "../../Page/Admin/Controller/ListProduct";
 import UpdateProduct from "../../Page/Admin/Controller/UpdateProduct";
 import PageAdmin from "../../Page/Admin/AdminPage/PageAdmin";
+import DetailBlog from "../../Page/Blog/DetailBlog";
+import MouseFollower from "../../../Asset/MouseFollower/MouseFollower";
 
 const Body = () => {
   return (
@@ -39,6 +41,7 @@ const Body = () => {
         <Route path="/order" element={<Order />}></Route>
         <Route path="/thiet-ke-website" element={<Category />}></Route>
         <Route path="/blog" element={<PageBlog />}></Route>
+        <Route path="/blog/:slug" element={<DetailBlog />}></Route>
         <Route path="/login" element={<AuthPage />}></Route>
         <Route path="/logout" element={<Logout />}></Route>
         <Route path="/contact" element={<PageContact />}></Route>
@@ -56,6 +59,7 @@ const Body = () => {
       </Routes>
       <GetInTouch></GetInTouch>
       <Footer></Footer>
+      <MouseFollower></MouseFollower>
     </div>
   );
 };

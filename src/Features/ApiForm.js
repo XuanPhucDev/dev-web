@@ -22,6 +22,7 @@ const ApiForm = ({ formik }) => {
     const getId = selectedOption.getAttribute("data-id-quan");
     setSelecQuan(getId);
   };
+  
   return (
     <>
       <div className="form-group">
@@ -29,11 +30,14 @@ const ApiForm = ({ formik }) => {
         <select
           id="province"
           name="province"
-          onChange={formik.handleChange}
+          onChange={(e) => {
+            formik.handleChange(e);
+            handleSelectTinh(e);
+          }}
           onBlur={formik.handleBlur}
           value={formik.values.province}
-          required
         >
+          
           <option value="">Chọn tỉnh thành</option>
           {getTinh.data &&
             getTinh.data.map((item) => (
@@ -42,6 +46,9 @@ const ApiForm = ({ formik }) => {
               </option>
             ))}
         </select>
+        {formik.touched.province && formik.errors.province ? (
+            <div className="error">{formik.errors.province}</div>
+          ) : null}
       </div>
       <div className="form-group">
         <label htmlFor="district">Quận/Huyện</label>
@@ -49,10 +56,13 @@ const ApiForm = ({ formik }) => {
         <select
           id="district"
           name="district"
-          onChange={formik.handleChange}
+          onChange={(e) => {
+            formik.handleChange(e);
+            handleSelectQuan(e);
+          }}
           onBlur={formik.handleBlur}
           value={formik.values.district}
-          required
+          
         >
           <option value="">Chọn Quận/Huyện</option>
           {getQuan.data &&
@@ -62,6 +72,9 @@ const ApiForm = ({ formik }) => {
               </option>
             ))}
         </select>
+        {formik.touched.district && formik.errors.district ? (
+            <div className="error">{formik.errors.district}</div>
+          ) : null}
       </div>
       <div className="form-group">
         <label htmlFor="ward">Phường/Xã</label>
@@ -71,7 +84,7 @@ const ApiForm = ({ formik }) => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.ward}
-          required
+          
         >
           <option value="">Chọn Phường/Xã</option>
           {getHuyen.data &&
@@ -81,16 +94,22 @@ const ApiForm = ({ formik }) => {
               </option>
             ))}
         </select>
+        {formik.touched.ward && formik.errors.ward ? (
+            <div className="error">{formik.errors.ward}</div>
+          ) : null}
       </div>
       <div className="form-group">
-        <label htmlFor="city">Địa chỉ</label>
+        <label htmlFor="location">Địa chỉ/Tên Công ty</label>
         <input
           type="text"
           id="location"
           name="location"
-          placeholder="Địa chỉ nhà của quý khách"
-          required
+          placeholder="Địa chỉ hoặc tên công ty của quý khách"
+          onChange={formik.handleChange}
         />
+        {formik.touched.location && formik.errors.location ? (
+            <div className="error">{formik.errors.location}</div>
+          ) : null}
       </div>
     </>
   );

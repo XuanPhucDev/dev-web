@@ -6,13 +6,17 @@ import useFetch from "../../../Context/API/ApiProduct.js";
 import HeadingPage from "../../Global/Title/HeadingPage.js";
 import Title from "../../Global/Title/Title.js";
 const CategoryProduct = (props) => {
-  const ApiProduct = useFetch(
-    "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"
-  );
   const [fileterProduct, setFilterProduct] = useState();
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedCheckbox, setSelectedCheckbox] = useState("");
+  const [limit, setLimit] = useState(8);
+  const ApiProduct = useFetch(
+    `https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing?limit=${limit}&page=1`
+  );
 
+  const handleShowMore = () => {
+    setLimit(limit + 4);
+  };
   const filterProduct = props.search
     ? ApiProduct.filter((item) =>
         item.title.toLowerCase().includes(props.search.toLowerCase())
@@ -198,7 +202,7 @@ const CategoryProduct = (props) => {
                       />
                       <label htmlFor="min">Giá từ cao đến thấp</label>
                     </div>
-                    <div className="form-tick">
+                    {/* <div className="form-tick">
                       {" "}
                       <input
                         type="checkbox"
@@ -221,7 +225,7 @@ const CategoryProduct = (props) => {
                         checked={selectedValue === "count"}
                       />
                       <label htmlFor="count">Lượt Mua Hàng</label>
-                    </div>
+                    </div> */}
                   </form>
                 </div>
               </div>
@@ -242,6 +246,10 @@ const CategoryProduct = (props) => {
                         ></CardProduct>
                       </Col>
                     ))}
+                    <div className="view-more flex">
+                    <button className="view-more" onClick={handleShowMore}>Xem thêm</button>
+
+                    </div>
                 </Row>
               </div>
             </Col>

@@ -4,39 +4,6 @@
  .title {
   font-size: 16px;
 }
- .container .table-cart {
-  width: 100%;
-  text-align: center;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
- .container .table-cart .images,
- .container .table-cart .quantity {
-  width: 20%;
-}
- .container .table-cart .product {
-  width: 40%;
-}
- .container .table-cart .title {
-  text-align: left;
-  padding: 0 10px;
-}
-
- .container .table-cart th,
- .container .table-cart td {
-  padding: 20px 0;
-  text-align: center;
-  border: 1px solid var(--background-color);
-}
- .container .table-cart tr td img {
-  width: 80%;
-  margin: 0 auto;
-}
- .container .table-cart #input-quantity {
-  text-align: center;
-  width: 40%;
-  margin: 0 10px;
-  display: inline-block;
-}
 .cart-item {
   background-color: #fff;
   padding: 20px;

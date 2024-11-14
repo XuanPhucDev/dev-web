@@ -2,11 +2,13 @@ import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 const CartProvider = ({ children }) => {
+  const linkOrder = "https://6735625c5995834c8a929abe.mockapi.io/DataOrder";
   const linkCate =
     "https://671eebe51dfc429919836d48.mockapi.io/myweb/categoryMarketing";
   const linkProduct =
     "https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing";
-  // const [quantitycart, setQuantityCart] = useState(0);
+  const linkBlog = "https://6735625c5995834c8a929abe.mockapi.io/DataBlog";
+    // const [quantitycart, setQuantityCart] = useState(0);
   const [cart, setCart] = useState(
     localStorage.getItem("CART") ? JSON.parse(localStorage.getItem("CART")) : []
   );
@@ -70,12 +72,18 @@ const CartProvider = ({ children }) => {
     newCart.splice(index, 1);
     setCart(newCart);
   };
+    const totalAmount = cart.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
   return (
     <CartContext.Provider
       value={{
         cart,
+        totalAmount,
         linkCate,
         linkProduct,
+        linkBlog,
+        linkOrder,
         buyNow,
         handleAddToCart,
         handleQuantity,

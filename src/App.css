@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
   font-style: normal;
   font-size: 14px;
 }
-.space-compoment{
+.space-compoment {
   margin-top: 100px;
 }
 .brands {
@@ -30,7 +30,7 @@ body {
   --title-color: #090b0e;
   --paraphase-color: #3d4c5e;
   --background-button-color: #ededfa;
-  --logo-primary-color: #CB4827;
+  --logo-primary-color: #cb4827;
   --secondary-color: #d8c21a;
   --tertiary-color: #8eca8c;
   --background-color: #ffffff;
@@ -47,25 +47,28 @@ body {
 .view-more a {
   display: inline-block;
 }
-.view-more button, .view-more a {
+.view-more button,
+.view-more a {
   background-color: #4e2fda;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 35px !important;
 }
-.view-more button i, .view-more a i{
+.view-more button i,
+.view-more a i {
   transform: rotate(-45deg);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   padding: 10px;
   margin-left: 10px;
   background-color: white;
-  color: #4E2FDA;
+  color: #4e2fda;
   border-radius: 100%;
 }
-.view-more button:hover i, .view-more a:hover i{
+.view-more button:hover i,
+.view-more a:hover i {
   transform: rotate(0deg);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 img {
   width: 100%;
@@ -76,7 +79,7 @@ ul {
   margin: 0 !important;
   padding: 0 !important;
 }
-ul li{
+ul li {
   margin: 0;
   padding: 0;
 }
@@ -178,4 +181,38 @@ p {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.table-cart {
+  width: 100%;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.table-cart .images,
+.table-cart .quantity {
+  width: 20%;
+}
+.table-cart .product {
+  width: 40%;
+}
+.table-cart .title {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.table-cart th,
+.table-cart td {
+  padding: 20px 0;
+  text-align: center;
+  border: 1px solid var(--background-color);
+}
+.table-cart tr td img {
+  width: 80%;
+  margin: 0 auto;
+}
+.table-cart #input-quantity {
+  text-align: center;
+  width: 40%;
+  margin: 0 10px;
+  display: inline-block;
 }

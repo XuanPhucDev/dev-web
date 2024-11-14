@@ -2,6 +2,9 @@
   display: flex;
   gap: 20px;
 }
+.list-product .row{
+  width: 100%;
+}
 .thumb {
   height: 100%;
   display: flex;

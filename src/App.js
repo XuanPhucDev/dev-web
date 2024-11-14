@@ -1,9 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Header from "./Compoment/Global/Header/Header";
-// import Footer from "./Compoment/Global/Footer/Footer";
 
-import MouseFollower from "./Asset/MouseFollower/MouseFollower";
 import Body from "./Compoment/Global/Body/Body";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -25,10 +22,7 @@ function App() {
   return (
     <div className="body">
       <HeaderNew></HeaderNew>
-      {/* <Header></Header> */}
       <Body />
-      {/* <Footer></Footer> */}
-      <MouseFollower></MouseFollower>
     </div>
   );
 }
