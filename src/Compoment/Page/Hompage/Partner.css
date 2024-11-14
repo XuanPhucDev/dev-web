@@ -14,3 +14,9 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .partner{
+    width: 85%;
+    margin: 0 auto;
+  }
+}

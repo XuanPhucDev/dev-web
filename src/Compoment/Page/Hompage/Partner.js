@@ -13,9 +13,25 @@ const Partner = () => {
     speed: 500, // Tốc độ chuyển slide
     slidesToShow: 4, // Số slide hiển thị cùng lúc
     slidesToScroll: 1, // Số slide cuộn mỗi lần
-    autoplay: true, // Tự động chuyển slide
+    autoplay: true, // Tự động chuyển slide 
     pauseOnHover: true,
-    autoplaySpeed: 1500, // Thời gian giữa các lần chuyển
+    arrow: false,
+    dot: false,
+    autoplaySpeed: 1500,
+    responsive: [
+      {
+        breakpoint: 1200, // Tablet
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768, // Mobile
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
   };
   return (
     <div className="partner flex flex-row space-compoment">

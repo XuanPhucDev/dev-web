@@ -10,8 +10,8 @@ const Footer = () => {
     <div className="footer space-compoment">
       <Container>
         <Row>
-          <Col lg={3} md={6} sm={6}>
-            <div className="footer-col-1 flex flex-column">
+          <Col lg={3} md={6} sm={6} xs={6}>
+            <div className="footer-col-1 flex flex-column"> 
               <img src={logoCoffee} alt="" />
               <p>
                 Bằng cách tối ưu hóa nội dung, tận dụng các từ khóa có liên quan
@@ -21,7 +21,7 @@ const Footer = () => {
               <Social></Social>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="footer-col-2 flex flex-column">
               <h4>About Links</h4>
               <ul>
@@ -52,7 +52,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="footer-col-3 flex flex-column">
               <h4>Get in touch</h4>
               <ul>
@@ -77,7 +77,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="footer-col-3 footer-col-4 flex flex-column">
               <h4>Account</h4>
               <ul>

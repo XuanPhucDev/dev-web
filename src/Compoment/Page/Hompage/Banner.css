@@ -99,7 +99,7 @@
   width: 100%;
   left: 0;
 }
-
+.banner-marketing .contact form{width: 100%;}
 .banner-marketing .contact .submit {
   width: 100%;
   justify-content: space-between;
@@ -210,6 +210,9 @@
   }
 }
 @media (max-width: 600px) {
+  .banner-marketing{
+    margin-top: 0px;
+  }
   .banner-marketing .anni {
     left: 50%;
     top: 51%;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import anniBanner1 from "../../../Asset/Images/ani-banner-1.png";
 import "./Banner.css";
 import useAxios from "../../../Context/API/UseAxios";
@@ -12,11 +12,22 @@ import elements3 from "../../../Asset/Images/Homepage/image-banner/elements3.png
 import loudspeaker from "../../../Asset/Images/Homepage/image-banner/sound-icons1.svg";
 import lite from "../../../Asset/Images/Homepage/image-banner/lite-icons1.svg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
   const cate = useAxios(
     "https://671eebe51dfc429919836d48.mockapi.io/myweb/categoryMarketing"
   );
+  const navigate = useNavigate();
+  const [oftionCate, setOftionCate]= useState();
+  const [services, setServices]= useState();
+
+  const handleSubmitSearch = (e)=> {
+    e.preventDefault();
+    console.log(oftionCate);
+    console.log(services);
+    navigate(`/search/oftion=${oftionCate}&services=${services}`);
+  }
   return (
     <div className="banner-marketing flex flex-column">
       <Container>
@@ -32,24 +43,17 @@ const Banner = () => {
                 thương hiệu.
               </p>
               <div className="contact flex flex-columns">
-                <Form>
+              <Form onSubmit={handleSubmitSearch}>
                   <Form.Select
                     aria-label="Default select example"
                     className="form-contact"
+                    onChange={(e)=> setOftionCate(e.target.value)}
+                    required
                   >
-                    <option>Doanh nghiệp của bạn về lĩnh vực gì ?</option>
+                    <option value="">Doanh nghiệp của bạn về lĩnh vực gì ?</option>
                     {cate.map((item) => (
-                      <option value={item.category}>{item.title}</option>
+                      <option name={item.category} value={item.category}>{item.title}</option>
                     ))}
-                    <option value="other">Khác</option>
-                  </Form.Select>
-                  <Form.Select
-                    aria-label="Default select example"
-                    className="form-contact"
-                  >
-                    <option>Bạn cần tìm dịch vụ gì ?</option>
-                    <option value="thietkewebsite">Thiết kế website</option>
-                    <option value="thietkewebsite">Digital Marketing</option>
                     <option value="other">Khác</option>
                   </Form.Select>
                   <div className="submit flex flex-row">
@@ -71,7 +75,7 @@ const Banner = () => {
               <img className="data-images" src={dataImages} alt="" />
               <img className="lite" src={lite} alt="" />
               <img className="elements2" src={elements2} alt="" />
-              <img className="elements3" src={elements3} alt="" />
+              <img className="elements3" src={elements3} alt="" /> 
             </div>
           </Col>
         </Row>

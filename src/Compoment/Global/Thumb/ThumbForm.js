@@ -97,7 +97,7 @@ const ThumbForm = () => {
             <ApiForm formik={formik}></ApiForm>
             <label htmlFor="message">Ghi chú</label>
             <textarea name="message" placeholder="Thông tin thêm..." />
-            <button type="submit">Send</button>
+            <button type="submit">Gửi Ngay</button>
           </form>
     </div>
   );

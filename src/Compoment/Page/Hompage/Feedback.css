@@ -2,6 +2,12 @@
   width: 95%;
   margin: 0 auto
 }
+@media (max-width: 768px) {
+  .feedback-homepage .slider-container{
+    width: 85%;
+    margin: 0 auto;
+  }
+}
 .feedback-homepage .slider-container .text-thumb-review, .feedback-homepage .slider-container .images-thumb-review {
   width: calc(50% - 20px);
 }

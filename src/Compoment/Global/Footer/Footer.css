@@ -11,6 +11,17 @@
 .footer .footer-col-1 img{
     width: 50%;
 }
+@media (max-width: 768px) {
+    .footer .footer-col-1 ul{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+    }
+    .footer .footer-col-1 ul li{
+        width: calc(50% - 20px);
+    }
+}
 .footer .footer-col-2{
     justify-content: start;
     align-items: start;
