@@ -26,7 +26,7 @@ const Banner = () => {
     e.preventDefault();
     console.log(oftionCate);
     console.log(services);
-    navigate(`/search/oftion=${oftionCate}&services=${services}`);
+    navigate(`/search-cate/${oftionCate}`);
   }
   return (
     <div className="banner-marketing flex flex-column">

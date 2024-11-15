@@ -6,7 +6,10 @@ import { Alert, Col, Container, Row } from "react-bootstrap";
 import Title from "../../../Global/Title/Title";
 import axios from "axios";
 import { UseCart } from "../../../../Context/Data/DataCart";
+import usePageTitle from "../../../../Features/TitlePage";
 const AddProduct = () => {
+  usePageTitle(`Thêm sản phẩm - D.A.C`);
+
   const [validated, setValidated] = useState(false);
   const { linkCate, linkProduct } = UseCart();
 

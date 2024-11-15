@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./CategoryProduct.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CardProduct from "../../Global/CardProduct/CardProduct.js";
 import useFetch from "../../../Context/API/ApiProduct.js";
 import HeadingPage from "../../Global/Title/HeadingPage.js";
 import Title from "../../Global/Title/Title.js";
+import usePageTitle from "../../../Features/TitlePage.js";
 const CategoryProduct = (props) => {
+  usePageTitle("Sản phẩm - D.A.C");
+
   const [fileterProduct, setFilterProduct] = useState();
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedCheckbox, setSelectedCheckbox] = useState("");
@@ -109,7 +112,7 @@ const CategoryProduct = (props) => {
         <Container>
           <div className="space-compoment"></div>
           <Row>
-            <Col lg={3}>
+            <Col lg={3} xs={12}>
               <div className="filter ">
                 <div className="filter-value">
                   <Title title="Giá sản phẩm" des="Lọc sản phẩm: "></Title>
@@ -202,40 +205,16 @@ const CategoryProduct = (props) => {
                       />
                       <label htmlFor="min">Giá từ cao đến thấp</label>
                     </div>
-                    {/* <div className="form-tick">
-                      {" "}
-                      <input
-                        type="checkbox"
-                        value="rating"
-                        onClick={handlefilterText}
-                        name="rating"
-                        id="rating"
-                        checked={selectedValue === "rating"}
-                      />
-                      <label htmlFor="rating">Đánh giá</label>
-                    </div>
-                    <div className="form-tick">
-                      {" "}
-                      <input
-                        type="checkbox"
-                        value="count"
-                        onClick={handlefilterText}
-                        name="count"
-                        id="count"
-                        checked={selectedValue === "count"}
-                      />
-                      <label htmlFor="count">Lượt Mua Hàng</label>
-                    </div> */}
                   </form>
                 </div>
               </div>
             </Col>
-            <Col lg={9}>
+            <Col lg={9} xs={12}>
               <div className="list-product">
                 <Row>
                   {fileterProduct &&
                     fileterProduct.map((item) => (
-                      <Col lg={3}>
+                      <Col lg={3} md={4} sm={6} xs={6}>
                         <CardProduct
                           key={item.id}
                           id={item.id}

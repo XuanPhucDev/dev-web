@@ -6,7 +6,10 @@ import WhyChooseUs from "../AboutUs/WhyChooseUs";
 import OurSkill from "../AboutUs/OurSkill";
 import ListServices from "../Services/ListServices";
 import OurTeam from "../AboutUs/OurTeam";
+import usePageTitle from "../../../Features/TitlePage";
 const PageServices = () => {
+  usePageTitle(`Dịch vụ - D.A.C`);
+
   return (
     <div className="page-services">
       <HeadingPage title="Dịch vụ của chúng tôi"></HeadingPage>

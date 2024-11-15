@@ -6,7 +6,10 @@ import AddProduct from "../Controller/AddProduct";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import ListProduct from "../Controller/ListProduct";
+import usePageTitle from "../../../../Features/TitlePage";
 const PageAdmin = () => {
+  usePageTitle(`Trang Quản Trị - D.A.C`);
+
   const [emailUser] = useState(localStorage.getItem("email"));
 
   const dataAdmin = useAxios(

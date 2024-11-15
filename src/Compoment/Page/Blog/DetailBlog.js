@@ -6,7 +6,6 @@ import "./DetailBlog.css";
 import { Container, Row } from "react-bootstrap";
 const DetailBlog = () => {
   const { slug: keyValue } = useParams();
-  //   console.log(keyValue);
 
   const { linkBlog } = UseCart();
   const dataBlog = useAxios(linkBlog).find((item) => item.id === keyValue);

@@ -8,7 +8,7 @@ const ListBlog = () => {
     <div className="list-blog">
       <Row>
         {DataBlog.map((item) => (
-          <Col lg={4}>
+          <Col lg={4} md={6} xs={12}>
             <ThumbBlog
               title={item.title}
               image_thumbnail={item.image_thumbnail}

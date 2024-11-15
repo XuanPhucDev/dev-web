@@ -15,7 +15,7 @@ const OurTeam = () => {
         </Row>
         <Row>
           {DataTeam.map((item) => (
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={6}>
               <div className="thumb-our-team">
                 <div className="images-thumb-our-team">
                   <img src={item.images} alt={item.name} />

@@ -2,9 +2,7 @@ import React from "react";
 import "./Blog.css";
 import Title from "../../Global/Title/Title";
 import { Col, Container, Row } from "react-bootstrap";
-import DataBlog from "../../../Context/Data/DataBlog";
 import { Link } from "react-router-dom";
-import ThumbBlog from "../../Global/Thumb/ThumbBlog";
 import ListBlog from "./ListBlog";
 const Blog = () => {
   return (

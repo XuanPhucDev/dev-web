@@ -26,6 +26,7 @@ import UpdateProduct from "../../Page/Admin/Controller/UpdateProduct";
 import PageAdmin from "../../Page/Admin/AdminPage/PageAdmin";
 import DetailBlog from "../../Page/Blog/DetailBlog";
 import MouseFollower from "../../../Asset/MouseFollower/MouseFollower";
+import SearchCate from "../../Page/Detail/SearchCate";
 
 const Body = () => {
   return (
@@ -34,7 +35,8 @@ const Body = () => {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/product-category" element={<CategoryProduct />}></Route>
         <Route path="/about-us" element={<AboutUs />}></Route>
-        <Route path="/search/:searchQuery" element={<Search />}></Route>
+        <Route path="/search/:slug" element={<Search />}></Route>
+        <Route path="/search-cate/:slug" element={<SearchCate />}></Route>
         <Route path="/product/:searchQuery" element={<Product />}></Route>
         <Route path="/update-product/:slug" element={<UpdateProduct />}></Route>
         <Route path="/cart" element={<Cart />}></Route>

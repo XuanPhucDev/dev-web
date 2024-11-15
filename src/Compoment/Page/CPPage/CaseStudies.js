@@ -3,7 +3,10 @@ import HeadingPage from "../../Global/Title/HeadingPage";
 import ThumbTab from "../../Global/Thumb/ThumbTab";
 import { Container } from "react-bootstrap";
 import dataCaseStudies from "../../../Context/Data/DataCaseStudies";
+import usePageTitle from "../../../Features/TitlePage";
 const CaseStudies = () => {
+  usePageTitle(`Các Dự Án - D.A.C`);
+
   return (
     <div className="page-caseStudies">
       <Container className="Product-Marketing ">

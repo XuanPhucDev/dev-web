@@ -23,3 +23,9 @@
     font-weight: 600;
     font-style: italic;
 }
+@media (max-width: 600px) {
+    .heading-page .title h2{
+        font-size: 48px;
+       
+    }
+}

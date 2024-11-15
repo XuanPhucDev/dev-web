@@ -34,7 +34,7 @@ const Partner = () => {
     ]
   };
   return (
-    <div className="partner flex flex-row space-compoment">
+    <div className="partner space-compoment">
       <Container>
         <Row>
           <Col lg={3}>

@@ -11,8 +11,10 @@ import { NavLink, Link } from "react-router-dom";
 import { Col, Container, InputGroup, Row } from "react-bootstrap";
 import useAxios from "../../../Context/API/UseAxios";
 import { UseCart } from "../../../Context/Data/DataCart";
+import { useNavigate } from "react-router-dom";
 const HeaderNew = () => {
   const [emailUser] = useState(localStorage.getItem("email"));
+  const navigate = useNavigate();
   const brandName = "D.A.C";
   const dataAdmin = useAxios(
     "https://6724cb3bc39fedae05b2bf65.mockapi.io/categoryProduct/category"
@@ -21,7 +23,7 @@ const HeaderNew = () => {
   const { cart } = UseCart();
   const handleInputSearch = (e) => {
     if (e.keyCode === 13 && e.target.value) {
-      window.location.href = `/search/${e.target.value}`;
+      navigate(`/search/${e.target.value}`);
     }
   };
   return (
@@ -33,7 +35,6 @@ const HeaderNew = () => {
               <Col xxl={2} xl={2} lg={2} md={2} sm={2} xs={4}>
                 <div className="logo">
                   <Link to="/" className="brands">
-                    {/* <h1>{brandName} </h1> */}
                     <img
                       src={logoDAC}
                       className="d-inline-block align-top"

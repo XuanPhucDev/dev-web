@@ -27,7 +27,7 @@ const OurHistory = () => {
           <Col lg={6}>
             <Row>
               {DataHistory.map((item) => (
-                <Col lg={6}>
+                <Col lg={6} md={6} xs={6}>
                   <div className="slide-history">
                     <span>{item.year}</span>
                     <h4>{item.title}</h4>

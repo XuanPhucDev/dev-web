@@ -1,8 +1,8 @@
-.vision h4{
+.vision h4 {
   font-weight: 700;
   font-size: 16px;
 }
-.vision .row .col-lg-6{
+.vision .row .col-lg-6 {
   height: 512px;
 }
 .vision .heading-vision {
@@ -32,15 +32,15 @@
   z-index: 9;
   color: white;
 }
-.vision .our-value .text h3{
-    font-size: 18px;
-    line-height: 30px;
-    margin: 20px 0;
-    font-weight: 600;
+.vision .our-value .text h3 {
+  font-size: 18px;
+  line-height: 30px;
+  margin: 20px 0;
+  font-weight: 600;
 }
-.vision p{
-    font-size: 14px;
-    font-weight: 400;
+.vision p {
+  font-size: 14px;
+  font-weight: 400;
 }
 .vision .our-value .overlay {
   top: 0;
@@ -48,14 +48,15 @@
   border-radius: 10px;
   z-index: 1;
 }
-.vision .our-value .view-more{
-    margin-bottom: 20px;
+.vision .our-value .view-more {
+  margin-bottom: 20px;
 }
-.vision .col-right{
-    justify-content: space-between;
-    font-size: 16px;
+.vision .col-right {
+  justify-content: space-between;
+  font-size: 16px;
 }
-.vision .col-right .our-mission, .vision .col-right .our-vision{
+.vision .col-right .our-mission,
+.vision .col-right .our-vision {
   border-radius: 10px;
   padding: 40px;
   height: calc(500px / 2);
@@ -63,38 +64,51 @@
   justify-content: start;
   align-items: center;
 }
-.vision .col-right .our-mission{
-  background-color: #C8BFF4;
+.vision .col-right .our-mission {
+  background-color: #c8bff4;
 }
-.vision .col-right .our-vision{
-  background-color:#FEBFDA;
+.vision .col-right .our-vision {
+  background-color: #febfda;
 }
-.vision .col-right .headline{
+.vision .col-right .headline {
   justify-content: space-between;
   width: 100%;
 }
-.vision .col-right .headline .icon i{
+.vision .col-right .headline .icon i {
   transform: rotate(-45deg);
   padding: 10px;
   background-color: red;
   border-radius: 100%;
   color: white;
 }
-.vision .tagline{
+.vision .tagline {
   font-size: 20px;
   font-weight: 700;
-  
 }
-.vision .col-right p{
+.vision .col-right p {
   margin: 0;
 }
+@media (max-width: 1400px) {
+  .vision .col-right .our-mission,
+  .vision .col-right .our-vision {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 992px) {
-  .vision .row .col-lg-6{
+  .vision .row .col-lg-6 {
     height: auto;
   }
-  .vision .our-value{
+  .vision .our-value {
     height: 375px;
     background-position: bottom;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision .col-right .our-mission,
+  .vision .col-right .our-vision {
+    height: auto;
   }
 }

@@ -8,7 +8,10 @@ import ConvertPrice from "../../../Global/Thumb/ConvertPrice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./FunctionProduct.css";
+import usePageTitle from "../../../../Features/TitlePage";
 const ListProduct = () => {
+  usePageTitle(`Danh sách sản phẩm - D.A.C`);
+
   const { linkProduct } = UseCart();
   const navigate = useNavigate();
   const tableListProduct = [

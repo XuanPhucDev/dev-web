@@ -2,8 +2,11 @@ import React from "react";
 import Title from "../../Global/Title/Title";
 import ThumbContact from "../../Global/Thumb/ThumbContact";
 import { Container, Row } from "react-bootstrap";
+import usePageTitle from "../../../Features/TitlePage";
 
 const PageContact = () => {
+  usePageTitle(`Liên hệ - D.A.C`);
+
   return (
     <div className="page-contact">
       <Container>

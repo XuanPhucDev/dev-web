@@ -3,7 +3,10 @@ import HeadingPage from "../../Global/Title/HeadingPage";
 import { Col, Container, Row } from "react-bootstrap";
 import dataTestimonials from "../../../Context/Data/DataTestimonials";
 import ThumbTestimonials from "../../Global/Thumb/ThumbTestimonials";
+import usePageTitle from "../../../Features/TitlePage";
 const PageTestimonials = () => {
+  usePageTitle(`Feedback - D.A.C`);
+
   return (
     <div className="page-testimonials">
       <HeadingPage title="Testimonials"> </HeadingPage>

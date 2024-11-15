@@ -9,10 +9,13 @@ import Partner from "../Hompage/Partner";
 import Vision from "../Hompage/Vision";
 import FeedbackCustomer from "../Hompage/Feedback";
 import OurTeam from "../AboutUs/OurTeam";
+import usePageTitle from "../../../Features/TitlePage";
 const AboutUs = () => {
+  usePageTitle("Về Chúng Tôi - D.A.C");
   return (
     <div className="page-about-us">
-      <HeadingPage title="About Us"></HeadingPage>
+     
+      <HeadingPage title="Về D.A.C"></HeadingPage>
       <About></About>
       <Partner></Partner>
       <WhyChooseUs></WhyChooseUs>

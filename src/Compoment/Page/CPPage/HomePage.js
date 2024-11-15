@@ -10,7 +10,10 @@ import Vision from "../Hompage/Vision";
 import Benefits from "../Hompage/Benefits";
 import Product from "../Hompage/Product";
 import FeedbackCustomer from "../Hompage/Feedback";
+import usePageTitle from "../../../Features/TitlePage";
 const HomePage = () => {
+  usePageTitle("Trang Chủ - D.A.C");
+
   return (
     <div className="homepage">
       <Banner></Banner>
