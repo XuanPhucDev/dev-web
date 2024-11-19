@@ -9,10 +9,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./FunctionProduct.css";
 import usePageTitle from "../../../../Features/TitlePage";
-const ListProduct = () => {
+const ListProduct = (props) => {
   usePageTitle(`Danh sách sản phẩm - D.A.C`);
 
-  const { linkProduct } = UseCart();
   const navigate = useNavigate();
   const tableListProduct = [
     "id",
@@ -23,12 +22,11 @@ const ListProduct = () => {
     "Danh Mục",
     "Chức Năng",
   ];
-  const dataProduct = useAxios(linkProduct);
+  const dataProduct = useAxios(props.link);
+  
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(
-        `https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing/${id}`
-      );
+      const res = await axios.delete(`${props.link}/${id}`);
       alert("Đã xóa sản phẩm thành công");
     } catch (error) {
       console.log("Errors Deleting Data: ", error);

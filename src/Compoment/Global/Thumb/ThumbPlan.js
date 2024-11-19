@@ -12,8 +12,8 @@ const ThumbPlan = (props) => {
               <div className="services-plan">
                 <h5>Gói dịch vụ:</h5>
                 <ul>
-                  {props.features && props.features.map((value) => (
-                    <li>{value}</li>
+                  {props.features && props.features.map((value, index) => (
+                    <li key={index}>{value}</li>
                   ))}
                 </ul>
               </div>

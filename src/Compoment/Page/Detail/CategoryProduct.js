@@ -23,7 +23,7 @@ const CategoryProduct = (props) => {
   const filterProduct = props.search
     ? ApiProduct.filter((item) =>
         item.title.toLowerCase().includes(props.search.toLowerCase())
-      )
+      ) 
     : null;
   const handlefilterText = (e) => {
     //GPT viet toi uu code

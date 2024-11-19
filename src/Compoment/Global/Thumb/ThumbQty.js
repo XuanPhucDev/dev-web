@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./ThumbQty.css";
 const ThumbQty = () => {
   const [count, setCount] = useState(1);
 

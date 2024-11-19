@@ -7,6 +7,8 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import ListProduct from "../Controller/ListProduct";
 import usePageTitle from "../../../../Features/TitlePage";
+import ListOrder from "../Controller/ListOrder";
+import TableList from "../../../Global/Thumb/TableList";
 const PageAdmin = () => {
   usePageTitle(`Trang Quản Trị - D.A.C`);
 
@@ -23,16 +25,21 @@ const PageAdmin = () => {
       <Container>
         <Row>
           <Tabs
-            defaultActiveKey="home"
+            defaultActiveKey="list-product"
             id="uncontrolled-tab-example"
             className="mb-3"
           >
-            <Tab eventKey="home" title="Danh sách sản phẩm">
-              <ListProduct></ListProduct>
+            <Tab eventKey="list-product" title="Danh sách sản phẩm">
+              <ListProduct
+                link={"https://6716463e33bc2bfe40bd35cb.mockapi.io/demoapi-xuanphuc/productMarketing"}
+              ></ListProduct>
             </Tab>
-            <Tab eventKey="profile" title="Thêm sản phẩm">
+            <Tab eventKey="add" title="Thêm sản phẩm">
               <AddProduct></AddProduct>
             </Tab>
+            {/* <Tab eventKey="list-order" title="Danh sách đơn hàng">
+              <ListOrder></ListOrder>
+            </Tab> */}
           </Tabs>
         </Row>
       </Container>

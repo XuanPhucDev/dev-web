@@ -11,23 +11,28 @@ const ThumbTableCart = () => {
         className="table-cart"
         style={{ width: "100%", borderCollapse: "collapse" }}
       >
-        <tr>
-          <th style={{ width: "20%" }}>Hình ảnh</th>
-          <th style={{ width: "30%" }}>Sản Phẩm</th>
-          <th style={{ width: "20%" }}>Số Lượng</th>
-          <th style={{ width: "10%" }}>Giá</th>
-          <th style={{ width: "10%" }}>Tạm Tính</th>
-          <th style={{ width: "10%" }}>Xoá</th>
-        </tr>
-        {cart.map((item, index) => (
-          <ThumbCart
-            image={item.image}
-            title={item.title}
-            index={index}
-            quantity={item.quantity}
-            price={item.price}
-          ></ThumbCart>
-        ))}
+        <thead>
+          <tr>
+            <th style={{ width: "20%" }}>Hình ảnh</th>
+            <th style={{ width: "30%" }}>Sản Phẩm</th>
+            <th style={{ width: "20%" }}>Số Lượng</th>
+            <th style={{ width: "10%" }}>Giá</th>
+            <th style={{ width: "10%" }}>Tạm Tính</th>
+            <th style={{ width: "10%" }}>Xoá</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cart.map((item, index) => (
+            <ThumbCart
+              key={index}
+              image={item.image}
+              title={item.title}
+              index={index}
+              quantity={item.quantity}
+              price={item.price}
+            ></ThumbCart>
+          ))}
+        </tbody>
       </table>
     </div>
   );

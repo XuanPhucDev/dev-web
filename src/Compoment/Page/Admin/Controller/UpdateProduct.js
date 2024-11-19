@@ -5,10 +5,11 @@ import { useParams } from "react-router-dom";
 import useAxios from "../../../../Context/API/UseAxios";
 import { UseCart } from "../../../../Context/Data/DataCart";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const UpdateProduct = () => {
   const { slug: keyValue } = useParams();
   const [validated, setValidated] = useState(false);
+  const navigate = useNavigate();
   const { linkCate, linkProduct } = UseCart();
   const cate = useAxios(linkCate);
   const data = useAxios(`${linkProduct}/${keyValue}`);
@@ -38,6 +39,7 @@ console.log(data);
         description: dataProduct.description,
       });
       alert("Update Product Success");
+      navigate("/admin-page");
     } catch (error) {
       console.log("Errors Update Product: ", error);
     }

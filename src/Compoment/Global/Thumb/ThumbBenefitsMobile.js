@@ -6,8 +6,8 @@ const ThumbBenefitsMobile = () => {
   return (
     <div className="thumb-benefits-mobile">
       <Row>
-        {DataBenefits.map((item) => (
-          <Col lg={4} md={6} sm={12} xs={12}>
+        {DataBenefits.map((item, index) => (
+          <Col lg={4} md={6} sm={12} xs={12} key={index}>
             <a href={item.link}>
               <div
                 className="case-study flex flex-row"

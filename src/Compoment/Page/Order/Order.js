@@ -1,26 +1,39 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Order.css";
 import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
 import HeadingPage from "../../Global/Title/HeadingPage";
-import ThumbForm from "../../Global/Thumb/ThumbForm";
 import { UseCart } from "../../../Context/Data/DataCart";
 import ConvertPrice from "../../Global/Thumb/ConvertPrice";
-import ThumbPayment from "../../Global/Thumb/ThumbPayment";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import ApiForm from "../../../Features/ApiForm";
 import axios from "axios";
 import QrTpBank from "../../../Asset/Images/Payment/qr-tpbank.jpg";
+import CustomOrderCode from "../../../Features/CustomOrderCode";
+import useAxios from "../../../Context/API/UseAxios";
 
 const Order = () => {
   const { cart, totalAmount, linkOrder } = UseCart();
   const form = useRef();
   const [method, setMethod] = useState("cod");
-  const checkMethod = (e) => {
-    setMethod(e.target.name)
-    
+  const [customCode, setCustomCode] = useState();
+  const Code = CustomOrderCode();
+
+  useEffect(() => {
+    setCustomCode(Code);
+  }, []);
+
+  if (useAxios(linkOrder).find((item) => item.customCode === customCode)) {
+    setCustomCode(Code);
+    console.log("newcode is: ", customCode);
+  } else {
+    console.log("code is: ", customCode);
   }
+
+  const checkMethod = (e) => {
+    setMethod(e.target.name);
+  };
   const formik = useFormik({
     initialValues: {
       first_name: "",
@@ -32,7 +45,6 @@ const Order = () => {
       location: "",
       email: "",
       message: "",
-      cart: cart,
     },
     validationSchema: Yup.object({
       first_name: Yup.string().required("Vui lòng điền HỌ của quý khách"),
@@ -50,9 +62,15 @@ const Order = () => {
     }),
 
     onSubmit: async (values) => {
-      console.log(values);
       try {
-        await axios.post(linkOrder, { values, totalAmount, method });
+        await axios.post(linkOrder, {
+          values,
+          totalAmount,
+          method,
+          customCode,
+          cart: cart,
+        });
+        alert("Đặt đơn thành công");
       } catch (error) {
         console.log("Errors creating Product: ", error);
       }
@@ -138,34 +156,36 @@ const Order = () => {
                   className="table-cart"
                   style={{ width: "100%", borderCollapse: "collapse" }}
                 >
-                  <tr>
-                    <th style={{ width: "60%" }}>Sản Phẩm</th>
-                    <th style={{ width: "20%" }}>Số Lượng</th>
-                    <th style={{ width: "20%" }}>Giá</th>
-                  </tr>
-                  {cart.map((item) => (
+                  <thead>
                     <tr>
+                      <th style={{ width: "60%" }}>Sản Phẩm</th>
+                      <th style={{ width: "20%" }}>Số Lượng</th>
+                      <th style={{ width: "20%" }}>Giá</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cart.map((item, index) => (
+                      <tr key={index}>
+                        <td>
+                          <h3 className="title">{item.title}</h3>
+                        </td>
+                        <td style={{ textAlign: "center" }}>
+                          <p>{item.quantity}</p>
+                        </td>
+                        <td style={{ textAlign: "end", paddingRight: "20px" }}>
+                          <ConvertPrice 
+                            price={item.price * item.quantity}
+                          ></ConvertPrice>
+                        </td>
+                      </tr>
+                    ))}
+                    <tr>
+                      <td colSpan={2}>Tổng Đơn hàng: </td>
                       <td>
-                        <h3 className="title">{item.title}</h3>
-                      </td>
-                      <td style={{ "text-align": "center" }}>
-                        <p>{item.quantity}</p>
-                      </td>
-                      <td
-                        style={{ "text-align": "end", "padding-right": "20px" }}
-                      >
-                        <ConvertPrice
-                          price={item.price * item.quantity}
-                        ></ConvertPrice>
+                        <ConvertPrice price={totalAmount}></ConvertPrice>
                       </td>
                     </tr>
-                  ))}
-                  <tr>
-                    <td colSpan={2}>Tổng Đơn hàng: </td>
-                    <td>
-                      <ConvertPrice price={totalAmount}></ConvertPrice>
-                    </td>
-                  </tr>
+                  </tbody>
                 </table>
               </div>
               <div className="payment">
@@ -175,15 +195,31 @@ const Order = () => {
                       <Col sm={3}>
                         <Nav variant="pills" className="flex-column">
                           <Nav.Item>
-                            <Nav.Link eventKey="cod" name="cod" onClick={(e)=> checkMethod(e)}>Ship COD</Nav.Link>
+                            <Nav.Link
+                              eventKey="cod"
+                              name="cod"
+                              onClick={(e) => checkMethod(e)}
+                            >
+                              Ship COD
+                            </Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
-                            <Nav.Link eventKey="banking"  name="banking" onClick={(e)=> checkMethod(e)}>
+                            <Nav.Link
+                              eventKey="banking"
+                              name="banking"
+                              onClick={(e) => checkMethod(e)}
+                            >
                               Chuyển Khoản QR
                             </Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
-                            <Nav.Link eventKey="zaloPay"  name="zaloPay" onClick={(e)=> checkMethod(e)}>ZaloPay</Nav.Link>
+                            <Nav.Link
+                              eventKey="zaloPay"
+                              name="zaloPay"
+                              onClick={(e) => checkMethod(e)}
+                            >
+                              ZaloPay
+                            </Nav.Link>
                           </Nav.Item>
                         </Nav>
                       </Col>

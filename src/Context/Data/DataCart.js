@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 const CartProvider = ({ children }) => {
-  const linkOrder = "https://6735625c5995834c8a929abe.mockapi.io/DataOrder";
+  const linkOrder = "https://6735625c5995834c8a929abe.mockapi.io/DataOrder/";
   const linkCate =
     "https://671eebe51dfc429919836d48.mockapi.io/myweb/categoryMarketing";
   const linkProduct =
